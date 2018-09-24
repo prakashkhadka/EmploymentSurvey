@@ -7,9 +7,13 @@
 				<p class="text-muted text-center">Please fill up the following form.</p>
 				<div class="card p-2 pt-0 mt-4 c-main-bg-color border-success">
 					<div class="card-body text-success">
-						
 						<p class="lead text-center">Do you live in Nepal or overseas ?</p>
-						<div class="row text-muted small justify-content-center">Please select one</div>
+						<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid">	
+							<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
+						</div>
+						<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
+							<p>Please select one</p>
+						</div>
 						<form #f="ngForm">
 							<div class="row text-center mt-4">
 								<div class="col custom-control custom-radio">
@@ -20,7 +24,6 @@
 						      			value="Nepal" 
 						      			name="location" 
 						      			[(ngModel)]="surveyService.location"
-						      			#location="ngModel"
 						      			required 
 							      		>
 						      		<label class="custom-control-label" for="locationNepal">Nepal</label>
@@ -38,23 +41,21 @@
 						      		<label class="custom-control-label" for="locationOverseas">Overseas</label>
 						      	</div>
 					     	</div>
-
 					    </form>
 
 						<hr>
 
 						<div class="row text-center">
 							<div class="col xs-6">
-								<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+								<button class="btn btn-outline-success" (click)="goBack()">Back</button>
 							</div>
 							<div class="col xs-6" *ngIf="surveyService.location != 'Overseas'">
-								<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/employment-status">Next</button>
+								<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
 							</div>
 							<div class="col xs-6" *ngIf="surveyService.location == 'Overseas'">
-								<button type="submit" [disabled]="f.invalid"  class="btn btn-outline-success btn-smal" routerLink="/country">Next</button>
+								<button type="submit" (click)="onSubmit()"  class="btn btn-outline-success">Next</button>
 							</div>
 						</div>
-						
 					</div>
 				</div>
 			</div>

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { SurveyFormComponent } from './survey-form/survey-form.component';
+import { NameComponent } from './name/name.component';
 import { HeaderComponent } from './header/header.component';
 import { RoutingModule } from './routing/routing.module';
 import { LocationComponent } from './location/location.component';
@@ -60,12 +60,13 @@ import { HousewifeEntryComponent } from './status/housewife/housewife-entry/hous
 import { HousewifeJobwishComponent } from './status/housewife/housewife-jobwish/housewife-jobwish.component';
 import { CourseCompletedComponent } from './course-completed/course-completed.component';
 import { UnderDevelopmentComponent } from './under-development/under-development.component';
+import { EmailComponent } from './email/email.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SurveyFormComponent,
+    NameComponent,
     HeaderComponent,
     LocationComponent,
     GenderComponent,
@@ -116,6 +117,7 @@ import { UnderDevelopmentComponent } from './under-development/under-development
     HousewifeJobwishComponent,
     CourseCompletedComponent,
     UnderDevelopmentComponent,
+    EmailComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 
-import { SurveyFormComponent } from '../survey-form/survey-form.component';
+import { NameComponent } from '../name/name.component';
 import { YearJoinedComponent } from '../year-joined/year-joined.component';
 import { CourseComponent } from '../course/course.component';
 import { CourseCompletedComponent } from '../course-completed/course-completed.component';
@@ -61,6 +61,8 @@ import { RetiredPensionComponent } from '../status/retired/retired-pension/retir
 import { HousewifeEntryComponent } from '../status/housewife/housewife-entry/housewife-entry.component';
 import { HousewifeJobwishComponent } from '../status/housewife/housewife-jobwish/housewife-jobwish.component';
 
+import { EmailComponent } from '../email/email.component';
+
 
 import { AuthGuardService } from '../auth/auth-guard.service';
 
@@ -81,6 +83,7 @@ const appRoutes: Routes = [
   {path:'country', component:CountryComponent},
   {path:'overseas-purpose', component:OverseasPurposeComponent},
   {path:'employment-status', component:EmployementStatusComponent},
+  {path:'name', component:NameComponent},
   {path:'job', component:JobEntryComponent, children:[
   	{path:'', component:JobTypeComponent},
   	{path:'organisation-type', component:JobOrganisationComponent},
@@ -125,7 +128,8 @@ const appRoutes: Routes = [
   ]},
   {path:'housewife', component:HousewifeEntryComponent, children:[
   	{path:'', component:HousewifeJobwishComponent}
-  ]}
+  ]},
+  {path:'email', component:EmailComponent},
 
 
 ]

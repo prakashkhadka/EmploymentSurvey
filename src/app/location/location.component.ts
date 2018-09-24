@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SurveyService } from '../survey.service';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loation',
@@ -10,9 +11,23 @@ import { Location } from '@angular/common';
 })
 export class LocationComponent implements OnInit {
 
-  constructor( private surveyService: SurveyService, private location:Location) { }
+  constructor( private surveyService: SurveyService, private location:Location, private router:Router) { }
 
   ngOnInit() {
+  }
+
+  isInvalid:boolean = false;
+  onSubmit(){
+  	//console.log("onCourse");
+  	if(this.surveyService.location == "Overseas"){
+  		this.router.navigate(['/country']);
+  	}
+  	else if(this.surveyService.location == "Nepal"){
+  		this.router.navigate(['/employment-status']);
+  	}
+  	else{
+  		this.isInvalid = true;
+  	}
   }
 
   goBack(){
