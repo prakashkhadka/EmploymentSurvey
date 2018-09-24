@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { SurveyService } from '../survey.service';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-highest-education',
@@ -9,9 +11,20 @@ import { Location } from '@angular/common';
 })
 export class HighestEducationComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location: Location) { }
+  constructor(private surveyService:SurveyService, private location: Location, private router:Router) { }
 
   ngOnInit() {
+  }
+
+  isInvalid:boolean = false;
+  onSubmit(){
+  	//console.log("onCourse");
+  	if(this.surveyService.highestEducationLevel){
+  		this.router.navigate(['/gender']);
+  	}
+  	else{
+  		this.isInvalid = true;
+  	}
   }
 
   goBack(){
