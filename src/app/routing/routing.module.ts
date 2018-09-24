@@ -62,6 +62,7 @@ import { HousewifeEntryComponent } from '../status/housewife/housewife-entry/hou
 import { HousewifeJobwishComponent } from '../status/housewife/housewife-jobwish/housewife-jobwish.component';
 
 import { EmailComponent } from '../email/email.component';
+import { ThankYouComponent } from '../thank-you/thank-you.component';
 
 
 import { AuthGuardService } from '../auth/auth-guard.service';
@@ -130,6 +131,7 @@ const appRoutes: Routes = [
   	{path:'', component:HousewifeJobwishComponent}
   ]},
   {path:'email', component:EmailComponent},
+  {path:'thank-you', component:ThankYouComponent};
 
 
 ]

@@ -1,4 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import * as firebase from 'firebase';
 import 'firebase/firestore';
@@ -10,7 +11,7 @@ import 'firebase/firestore';
   providedIn: 'root'
 })
 export class SurveyService {
-	constructor(){
+	constructor(private router:Router){
 
 	}
   
@@ -57,6 +58,8 @@ export class SurveyService {
   serviceDuration:string;
   pension:string;
   housewifeJobwish:string;
+  email:string;
+  consent:string;
 
 
 
@@ -65,7 +68,9 @@ export class SurveyService {
   }
 
   submit(){
-  	
+  	console.log("Submit method called");
+  	this.router.navigate(['/thank-you']);
+	/*
   	let name = {
   		firstName: this.firstname,
   		lastName: this.lastname,
@@ -81,6 +86,7 @@ export class SurveyService {
 			console.log("Something went wrong. Please try again");
 		}
 	)
+	*/
   }
 
 

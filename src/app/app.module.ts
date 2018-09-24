@@ -61,6 +61,7 @@ import { HousewifeJobwishComponent } from './status/housewife/housewife-jobwish/
 import { CourseCompletedComponent } from './course-completed/course-completed.component';
 import { UnderDevelopmentComponent } from './under-development/under-development.component';
 import { EmailComponent } from './email/email.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 
 @NgModule({
@@ -118,6 +119,7 @@ import { EmailComponent } from './email/email.component';
     CourseCompletedComponent,
     UnderDevelopmentComponent,
     EmailComponent,
+    ThankYouComponent,
   ],
   imports: [
     BrowserModule,
