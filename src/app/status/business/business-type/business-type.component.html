@@ -1,0 +1,120 @@
+<p class="lead text-center">What is your business type?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="production" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="Production" 
+      			name="businessType" 
+      			[(ngModel)]="surveyService.businessType"
+      			#production="ngModel"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="production">Production</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="retail" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Retail" 
+      			name="businessType" 
+      			[(ngModel)]="surveyService.businessType"
+      			#retail="ngModel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="retail">Retail</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="service" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Service" 
+      			name="businessType" 
+      			[(ngModel)]="surveyService.businessType"
+      			#service="ngModel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="service">Service</label>
+      	</div>
+
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="o" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			 
+      			name="businessType" 
+      			required
+      			(change)="otherSelected()"
+	      		>
+      		<label class="custom-control-label" for="o">Other</label>
+      	</div>
+
+      	
+
+      	<div class="form-group col-sm-12 col-xs-12 ml-3 mt-4" *ngIf="show && service.value != 'Service' && retail.value != 'Retail' && production.value != 'Production' ">
+	      	<label for="other">Please enter your business type below</label>
+	      	<input 
+	      		type="text" 
+		      	class="form-control" 
+		      	id="other" 
+		      	placeholder="Business type" 
+		      	name="businessType"
+		      	[(ngModel)]="surveyService.businessType" 
+		      	#other = "ngModel" 
+		      	minlength="2"
+		      	maxlength="30" 
+		      	required 
+		      	[ngClass]="{ 'is-invalid': other.invalid && other.touched, 'is-valid': other.valid && other.touched }" 
+	      		>
+	      		<div *ngIf="other.invalid && other.touched" class="invalid-feedback">
+                    <div *ngIf="other.errors.required">Please enter your other</div>
+                    <div *ngIf="other.errors.minlength">Minimum 2 characters</div>
+                    <div *ngIf="other.errors.maxlength">Maximum 30 characters</div>
+                </div>
+	    </div>
+	    <!--
+			<div class="form-group col-sm-12 col-xs-12 ml-3 mt-4" *ngIf="show && service.value != 'Service' && retail.value != 'Retail' && production.value != 'Production' ">
+		      	<label for="other">Please enter your business type below</label>
+		      	<input 
+		      		type="text" 
+			      	class="form-control" 
+			      	id="other" 
+			      	placeholder="Business type" 
+			      	name="businessType"
+			      	[(ngModel)]="surveyService.businessType" 
+			      	#other = "ngModel" 
+			      	minlength="2"
+			      	maxlength="30" 
+			      	required 
+			      	[ngClass]="{ 'is-invalid': other.invalid && other.touched, 'is-valid': other.valid && other.touched }" 
+		      		>
+		      		<div *ngIf="other.invalid && other.touched" class="invalid-feedback">
+	                    <div *ngIf="other.errors.required">Please enter your other</div>
+	                    <div *ngIf="other.errors.minlength">Minimum 2 characters</div>
+	                    <div *ngIf="other.errors.maxlength">Maximum 30 characters</div>
+	                </div>
+		    </div>
+    	-->
+      	
+ 	</div>
+
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="employee-number">Next</button>
+		
+	</div>
+</div>
+					

@@ -1,0 +1,106 @@
+<p class="lead text-center">What would you like to do after completing this course ?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="Further study in Nepal" 
+      			name="afterStudy" 
+      			[(ngModel)]="surveyService.afterStudy"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="group-1">Further study in Nepal</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Foreign study" 
+      			name="afterStudy" 
+      			[(ngModel)]="surveyService.afterStudy"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-2">Foreign study</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-3" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Foreign employment" 
+      			name="afterStudy" 
+      			[(ngModel)]="surveyService.afterStudy"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-3">Foreign employment</label>
+      	</div>
+
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-4" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="20-50 lakhs" 
+      			name="Job" 
+      			[(ngModel)]="surveyService.afterStudy"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-4">Job</label>
+      	</div>
+
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-5" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Business" 
+      			name="afterStudy" 
+      			[(ngModel)]="surveyService.afterStudy"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-5">Business</label>
+      	</div>
+
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-6" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Other" 
+      			name="afterStudy" 
+      			[(ngModel)]="surveyService.afterStudy"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-6">Other</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-7" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Not sure" 
+      			name="afterStudy" 
+      			[(ngModel)]="surveyService.afterStudy"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-7">Not sure / No plan yet</label>
+      	</div>
+ 	</div>
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/study/dream-job">Next</button>
+		
+	</div>
+</div>
+					

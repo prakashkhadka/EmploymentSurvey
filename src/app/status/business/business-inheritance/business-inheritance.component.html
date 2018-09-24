@@ -1,0 +1,56 @@
+<p class="lead text-center">How did you enter in business ?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="Family run" 
+      			name="businessInheritance" 
+      			[(ngModel)]="surveyService.businessInheritance"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="group-1">I involved in family run business</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="I founded" 
+      			name="businessInheritance" 
+      			[(ngModel)]="surveyService.businessInheritance"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-2">I started my own business</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-3" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="I bought" 
+      			name="businessInheritance" 
+      			[(ngModel)]="surveyService.businessInheritance"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-3">I bought this business from others</label>
+      	</div>
+ 	</div>
+
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/business/business-duration">Next</button>
+		
+	</div>
+</div>
+					

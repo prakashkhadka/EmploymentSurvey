@@ -1,0 +1,42 @@
+<p class="lead text-center">Did you change your job in last 4 years ?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div>
+		<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="yes" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Yes" 
+      			name="pastJobChange" 
+      			[(ngModel)]="surveyService.pastJobChange"
+      			required
+	      		>
+      		<label class="custom-control-label" for="yes">Yes</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="no" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="No" 
+      			name="pastJobChange" 
+      			[(ngModel)]="surveyService.pastJobChange"
+      			required
+	      		>
+      		<label class="custom-control-label" for="no">No</label>
+      	</div>
+	</div>
+
+	<hr>
+
+	<div class="row text-center">
+		<div class="col xs-6">
+			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+		</div>
+		<div class="col xs-6">
+			<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/job/future-job-change">Next</button>
+		</div>
+	</div>
+</form>
+					

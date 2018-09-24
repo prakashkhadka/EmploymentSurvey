@@ -1,0 +1,116 @@
+<p class="lead text-center">What is your monthly income from job ?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="10-15 Thousands" 
+      			name="jobIncome" 
+      			[(ngModel)]="surveyService.jobIncome"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="group-1">10-15 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="15-20 Thousands" 
+      			name="jobIncome" 
+      			[(ngModel)]="surveyService.jobIncome"
+      			required
+	      		>
+      		<label class="custom-control-label" for="business">15-20 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-3" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="20-25 Thousands" 
+      			name="jobIncome" 
+      			[(ngModel)]="surveyService.jobIncome"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-3">20-25 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-4" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="P25-35 Thousands" 
+      			name="jobIncome" 
+      			[(ngModel)]="surveyService.jobIncome"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-4">25-35 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-5" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="35-50 Thousands" 
+      			name="jobIncome" 
+      			[(ngModel)]="surveyService.jobIncome"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-5">35-50 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-6" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="50-100 Thousands" 
+      			name="jobIncome" 
+      			[(ngModel)]="surveyService.jobIncome"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-6">50-100 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-7" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="More than 100 Thousands" 
+      			name="jobIncome" 
+      			[(ngModel)]="surveyService.jobIncome"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-7">100 Thousands above</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-8" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Don't want to disclose" 
+      			name="jobIncome" 
+      			[(ngModel)]="surveyService.jobIncome"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-8">Don't want to disclose</label>
+      	</div>
+      	
+ 	</div>
+
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/job/job-other-activities">Next</button>
+	</div>
+</div>
+					

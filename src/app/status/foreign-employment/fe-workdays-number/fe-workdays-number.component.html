@@ -1,0 +1,66 @@
+<p class="lead text-center"> How many days do you work in a week ?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="4" 
+      			name="FeWorkDayNumber" 
+      			[(ngModel)]="surveyService.FeWorkDayNumber"
+      			required 
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-1">4 days a week</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="5" 
+      			name="FeWorkDayNumber" 
+      			[(ngModel)]="surveyService.FeWorkDayNumber"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-2">5 days a week</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="3-5-years" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="6" 
+      			name="FeWorkDayNumber" 
+      			[(ngModel)]="surveyService.FeWorkDayNumber"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="3-5-years">6 days a week</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-3" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="7" 
+      			name="FeWorkDayNumber" 
+      			[(ngModel)]="surveyService.FeWorkDayNumber"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-3">7 days a week</label>
+      	</div>
+      	
+ 	</div>
+
+	<hr>
+	
+	<div class="row text-center">
+		<div class="col xs-6">
+			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+		</div>
+		<div class="col xs-6">
+			<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/foreign-employment/overtime">Next</button>
+		</div>
+	</div>
+</form>

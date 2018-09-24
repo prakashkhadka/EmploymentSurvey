@@ -1,0 +1,116 @@
+<p class="lead text-center">Apart from your regular job, what other activities are you involved in ?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="Social Service" 
+      			name="jobOtherActivites" 
+      			[(ngModel)]="surveyService.jobOtherActivites"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="group-1">Social Service</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="15-20 Thousands" 
+      			name="Involved in other social organisation" 
+      			[(ngModel)]="surveyService.jobOtherActivites"
+      			required
+	      		>
+      		<label class="custom-control-label" for="business">I am involved in other social organisation. i.e. club</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-3" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Politics" 
+      			name="jobOtherActivites" 
+      			[(ngModel)]="surveyService.jobOtherActivites"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-3">Politics</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-4" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Part-time job" 
+      			name="jobOtherActivites" 
+      			[(ngModel)]="surveyService.jobOtherActivites"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-4">Part-time job</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-5" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Provide support to family business" 
+      			name="jobOtherActivites" 
+      			[(ngModel)]="surveyService.jobOtherActivites"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-5">I provide support to family business.</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-6" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Household activities" 
+      			name="jobOtherActivites" 
+      			[(ngModel)]="surveyService.jobOtherActivites"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-6">I involve in household activities</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-7" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Other hobby" 
+      			name="jobOtherActivites" 
+      			[(ngModel)]="surveyService.jobOtherActivites"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-7">Other hobby i.e. music, singing, dancing</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-8" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Don't want to disclose" 
+      			name="jobOtherActivites" 
+      			[(ngModel)]="surveyService.jobOtherActivites"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-8">Don't want to disclose</label>
+      	</div>
+      	
+ 	</div>
+
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/job/job-satisfaction">Next</button>
+	</div>
+</div>
+					

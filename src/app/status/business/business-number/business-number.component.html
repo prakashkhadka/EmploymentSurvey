@@ -1,0 +1,44 @@
+<p class="lead text-center">Is it your first business ?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value='Yes' 
+      			name="businessNumber" 
+      			[(ngModel)]="surveyService.businessNumber"
+      			required 
+      			(change)="yesSelected()"
+	      		>
+      		<label class="custom-control-label" for="group-1">Yes</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input"  
+      			name="businessNumber"
+      			value="No"
+      			[(ngModel)]="surveyService.businessNumber"
+	      		>
+      		<label class="custom-control-label" for="group-2">No</label>
+      	</div>
+ 	</div>
+
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="business-number">Next</button>
+		
+	</div>
+</div>
+					

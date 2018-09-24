@@ -1,0 +1,42 @@
+<p class="lead text-center">How satisfied are you from your current job?</p>
+<div class="row text-muted small justify-content-center">Please slide left or right:</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<!--
+		<div class="form-group">
+		    <label for="formControlRange">Slide left or right.</label>
+		    <input type="range" class="form-control-range" id="formControlRange">
+	  	</div>
+	  -->
+	  	<div class="slidecontainer">
+  			<input type="range" 
+  				min="0" 
+  				max="10"  
+  				class="slider" 
+  				id="myRange"
+  				name="job-satisfaction"
+  				[(ngModel)]="surveyService.jobSatiscationLevel"
+  				required 
+  				>
+      	</div>
+      	
+ 	</div>
+ 	<div class="row">
+ 		<div class="col text-center">
+  			<h5>{{surveyService.jobSatiscationLevel}}</h5>
+  			<p>Higher value = higher job satisfaction</p>
+  		</div>
+  	</div>
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/job/job-change">Next</button>
+	</div>
+</div>
+					

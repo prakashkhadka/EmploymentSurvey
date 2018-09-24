@@ -1,0 +1,44 @@
+<p class="lead text-center">What is your dream job after completing this course ?</p>
+<div class="row text-muted small justify-content-center">Please enter your dream job below</div>
+<div class="card-body text-success">
+<form #f="ngForm">
+	
+		<div class="row">
+		    <div class="col form-group">
+		      	<label for="dreamjob">Dream job</label>
+		      	<input 
+		      		type="text" 
+			      	class="form-control" 
+			      	id="dreamjob" 
+			      	placeholder="Your dream job" 
+			      	name="dreamJob"
+			      	#dreamJob = "ngModel" 
+			      	[(ngModel)]="surveyService.dreamJob" 
+			      	minlength="2"
+			      	maxlength="30" 
+			      	required 
+			      	[ngClass]="{ 'is-invalid': dreamJob.invalid && dreamJob.touched, 'is-valid': dreamJob.valid && dreamJob.touched }" 
+		      		>
+		      		<div *ngIf="dreamJob.invalid && dreamJob.touched" class="invalid-feedback">
+                        <div *ngIf="dreamJob.errors.required">Please enter your Dream Job</div>
+                        <div *ngIf="dreamJob.errors.minlength">Minimum 2 characters</div>
+                        <div *ngIf="dreamJob.errors.maxlength">Maximum 30 characters</div>
+                    </div>
+
+		    </div>
+		    
+	    </div>
+		
+
+		    <hr>
+
+	    <div class="row text-center">
+			<div class="col xs-6">
+				<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+			</div>
+			<div class="col xs-6">
+				<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/study/dream-job">Next</button>
+			</div>
+		</div>
+</form>
+					

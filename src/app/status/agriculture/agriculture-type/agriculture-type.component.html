@@ -1,0 +1,101 @@
+<p class="lead text-center"> What type of agriculture profession are you involved in ? (तपाइको कृषी पेशा के हो ?)</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="Traditional" 
+      			name="agricultureType" 
+      			[(ngModel)]="surveyService.agricultureType"
+      			required 
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-1">Traditional (परम्परागत)</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Cow farm" 
+      			name="agricultureType" 
+      			[(ngModel)]="surveyService.agricultureType"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-2">Cow farming (गाइपालन)</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="3-5-years" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Buffalo farm" 
+      			name="agricultureType" 
+      			[(ngModel)]="surveyService.agricultureType"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="3-5-years">Buffalo farming (भैसीपालन)</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-3" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Poultry farm" 
+      			name="agricultureType" 
+      			[(ngModel)]="surveyService.agricultureType"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-3">Poultry farming (कुखुरापालन)</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-4" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Cashcorp" 
+      			name="agricultureType" 
+      			[(ngModel)]="surveyService.agricultureType"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-4">Cashcorp (नगदेबाली)</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-5" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="horticulture" 
+      			name="agricultureType" 
+      			[(ngModel)]="surveyService.agricultureType"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-5">Horticulture (फलफुल)</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-6" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Other" 
+      			name="agricultureType" 
+      			[(ngModel)]="surveyService.agricultureType"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-6">Other(अन्य)</label>
+      	</div>
+ 	</div>
+
+	<hr>
+	
+	<div class="row text-center">
+		<div class="col xs-6">
+			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+		</div>
+		<div class="col xs-6">
+			<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/agriculture/agriculture-income">Next</button>
+		</div>
+	</div>
+</form>

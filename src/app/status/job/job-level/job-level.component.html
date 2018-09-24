@@ -1,0 +1,92 @@
+<p class="lead text-center">What is your job level ?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="Don't want to say" 
+      			name="jobLevel" 
+      			[(ngModel)]="surveyService.jobLevel"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="group-1">Don't want to say</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Manager" 
+      			name="jobLevel" 
+      			[(ngModel)]="surveyService.jobLevel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="business">Manager</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-3" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Mid-level manager" 
+      			name="jobLevel" 
+      			[(ngModel)]="surveyService.jobLevel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-3">Mid level manager</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-4" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Plus two - Campus teacher" 
+      			name="jobLevel" 
+      			[(ngModel)]="surveyService.jobLevel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-4">+2, Campus teacher</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-5" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="School teacher" 
+      			name="jobLevel" 
+      			[(ngModel)]="surveyService.jobLevel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-5">School teacher</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-6" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Other" 
+      			name="jobLevel" 
+      			[(ngModel)]="surveyService.jobLevel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-6">Other</label>
+      	</div>
+      	
+ 	</div>
+
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/job/job-income">Next</button>
+	</div>
+</div>
+					

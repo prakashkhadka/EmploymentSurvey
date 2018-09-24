@@ -1,0 +1,77 @@
+<section id="signup-form" class="mt-3">
+	<div class="container">
+		<div class="row justify-content-md-center">
+			<div class="col-sm-8 col-xs-12">
+				<h4 class="text-success font-weight-normal text-center">Employment Survey</h4>
+				<hr>
+				<p class="text-muted text-center">Please fill up the following form.</p>
+				<div class="card p-2 pt-0 mt-4 c-main-bg-color border-success">
+					<div class="card-body text-success">
+						<form #f="ngForm">
+							<div>
+								<div class="row">
+								    <div class="form-group col-sm-6 col-xs-12">
+								      	<label for="firstname">Firstname</label>
+								      	<input 
+								      		type="text" 
+									      	class="form-control" 
+									      	id="firstname" 
+									      	placeholder="Firstname" 
+									      	name="firstname"
+									      	#firstname = "ngModel" 
+									      	[(ngModel)]="surveyService.firstname" 
+									      	minlength="1"
+									      	maxlength="30" 
+									      	required 
+									      	[ngClass]="{ 'is-invalid': firstname.invalid && firstname.touched, 'is-valid': firstname.valid && firstname.touched }" 
+								      		>
+								      		<div *ngIf="firstname.invalid && firstname.touched" class="invalid-feedback">
+					                            <div *ngIf="firstname.errors.required">Please enter your Firstname</div>
+					                            <div *ngIf="firstname.errors.minlength">Minimum 1 characters</div>
+					                            <div *ngIf="firstname.errors.maxlength">Maximum 30 characters</div>
+					                        </div>
+
+								    </div>
+								    <div class="form-group col-sm-6 col-xs-12">
+								      	<label for="lastname">Lastname</label>
+								      	<input type="text" 
+									      	class="form-control" 
+									      	id="lastname" 
+									      	placeholder="Lastname" 
+									      	name="lastName"
+									      	[(ngModel)]="surveyService.lastname"
+									      	#lastname="ngModel"
+									      	required
+									      	minlength="1"
+									      	maxlength="30" 
+								      		[ngClass]="{ 'is-invalid': lastname.invalid && lastname.touched, 'is-valid': lastname.valid && lastname.touched }" 
+								      		>
+								      		<div *ngIf="lastname.invalid && lastname.touched" class="invalid-feedback">
+					                            <div *ngIf="lastname.errors.required">Please enter your Lastname</div>
+					                            <div *ngIf="lastname.errors.minlength">Minimum 1 characters</div>
+					                            <div *ngIf="lastname.errors.maxlength">Maximum 30 characters</div>
+					                        </div>
+								    </div>
+							    </div>
+								
+
+								    <hr>
+
+							    <div class="row">
+							    	<div class="col float-right">
+							    		<button type="submit" [disabled]="f.invalid" routerLink="/year-joined" class="btn btn-outline-success float-right">Next</button>
+							    	<!--
+							    		<button  class="btn btn-outline-success float-right" (click)="submit()">Submit</button>
+						    		-->
+							    	</div>
+							    </div>
+						    </div>
+							
+					  		
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

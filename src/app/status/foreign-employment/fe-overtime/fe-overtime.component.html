@@ -1,0 +1,51 @@
+<p class="lead text-center">Do you work overtime ?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4 text-center">
+		<div class="col custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="Yes"
+      			name="Fe-Overtime" 
+      			[(ngModel)]="surveyService.FeOvertime"
+      			#production="ngModel"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="group-1">Yes</label>
+      	</div>
+      	
+      	<div class="col custom-control custom-radio">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="No"
+      			name="Fe-Overtime" 
+      			[(ngModel)]="surveyService.FeOvertime"
+      			#production="ngModel"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="group-2">No</label>
+      	</div>	
+ 	</div>
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6" *ngIf="!surveyService.FeOvertime">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-small" routerLink="employee-number">Next</button>
+	</div>
+	<div class="col xs-6" *ngIf="production.value == 'Yes'">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-small" routerLink="/foreign-employment/overtime-hours">Next</button>
+	</div>
+	<div class="col xs-6" *ngIf="production.value == 'No'">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-small" routerLink="employee-number">Next</button>
+	</div>
+</div>
+					

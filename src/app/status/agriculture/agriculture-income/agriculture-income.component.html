@@ -1,0 +1,126 @@
+<p class="lead text-center"> What is your monthly income ( in thousands ) ? (महिनामा कति कमाइ गर्नुहुन्छ ?)</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="20-30" 
+      			name="AgricultureIncome" 
+      			[(ngModel)]="surveyService.AgricultureIncome"
+      			required 
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-1">20-30 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="30-40" 
+      			name="AgricultureIncome" 
+      			[(ngModel)]="surveyService.AgricultureIncome"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-2">30-40 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="3-5-years" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="40-60" 
+      			name="AgricultureIncome" 
+      			[(ngModel)]="surveyService.AgricultureIncome"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="3-5-years">40-60 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-3" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="60-80" 
+      			name="AgricultureIncome" 
+      			[(ngModel)]="surveyService.AgricultureIncome"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-3">60-80 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-4" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="80-110" 
+      			name="AgricultureIncome" 
+      			[(ngModel)]="surveyService.AgricultureIncome"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-4">80-110 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-5" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="110-150" 
+      			name="AgricultureIncome" 
+      			[(ngModel)]="surveyService.AgricultureIncome"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-5">110-150 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-6" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="150-200" 
+      			name="AgricultureIncome" 
+      			[(ngModel)]="surveyService.AgricultureIncome"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-6">150-200 Thousands</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-7" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="2 Lakhs above" 
+      			name="AgricultureIncome" 
+      			[(ngModel)]="surveyService.AgricultureIncome"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-7">Above 2 Lakhs</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-8" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Don't want to say" 
+      			name="AgricultureIncome" 
+      			[(ngModel)]="surveyService.AgricultureIncome"
+      			required
+	      		>
+      		<label class="custom-control-label pl-2 ml-3" for="group-8">I don't want to say</label>
+      	</div>
+      	
+ 	</div>
+
+	<hr>
+	
+	<div class="row text-center">
+		<div class="col xs-6">
+			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+		</div>
+		<div class="col xs-6">
+			<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="">Next</button>
+		</div>
+	</div>
+</form>

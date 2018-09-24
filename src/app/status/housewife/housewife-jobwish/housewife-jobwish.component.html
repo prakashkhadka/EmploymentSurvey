@@ -1,0 +1,42 @@
+<p class="lead text-center">Would you like to work outside (office)? ( के तपाइँ घर बाहिर ( अफिसमा ) काम गर्न चाहनुहुन्छ ?)</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row text-center">
+		<div class="col custom-control custom-radio mt-2">
+      		<input 
+      			id="yes" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Yes" 
+      			name="housewifeWish" 
+      			[(ngModel)]="surveyService.housewifeWish"
+      			required
+	      		>
+      		<label class="custom-control-label" for="yes">Yes</label>
+      	</div>
+      	<div class="col custom-control custom-radio mt-2">
+      		<input 
+      			id="no" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="No" 
+      			name="housewifeWish" 
+      			[(ngModel)]="surveyService.housewifeWish"
+      			required
+	      		>
+      		<label class="custom-control-label" for="no">No</label>
+      	</div>
+	</div>
+
+	<hr>
+
+	<div class="row text-center">
+		<div class="col xs-6">
+			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+		</div>
+		<div class="col xs-6">
+			<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="">Next</button>
+		</div>
+	</div>
+</form>
+					

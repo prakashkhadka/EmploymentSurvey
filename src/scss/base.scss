@@ -1,0 +1,92 @@
+@import "variables";
+@import "mixins";
+@import "utilities";
+@import "../bootstrap/bootstrap";
+
+.c-nav-bg-color, .c-main-bg-color{
+	background-color: $navBgColor;
+}
+
+body{
+	margin-top: 100px;
+}
+
+#course-container{
+	margin: 0px 20px 0px 20px
+}
+
+
+.card-columns {
+	@include media-breakpoint-only(sm) {
+    	column-count: 2;
+	}
+	@include media-breakpoint-only(md) {
+    	column-count: 4;
+  	}
+  	@include media-breakpoint-only(lg) {
+    	column-count: 5;
+  	}
+  	@include media-breakpoint-only(xl) {
+    	column-count: 6;
+  	}
+}
+
+
+#tutor-my-courses{
+	.card-columns{
+		@include media-breakpoint-only(sm) {
+	    	column-count: 2;
+		}
+		@include media-breakpoint-only(md) {
+	    	column-count: 2;
+	  	}
+	  	@include media-breakpoint-only(lg) {
+	    	column-count: 3;
+	  	}
+	  	@include media-breakpoint-only(xl) {
+	    	column-count: 3;
+	  	}
+	}
+
+}
+
+
+button[disabled]{
+	cursor: no-drop;
+}
+
+.c-invalid-feedback{
+	font-size:80%;
+	color: #dc3545;
+}
+.modal-content{
+	margin-top: 100px;
+}
+
+
+.c-modal-bg-color{
+	background-color: rgba(0, 0, 0, 0.7)
+	
+}
+
+.sectionDescription{
+	text-indent:0px;
+}
+#section-title{
+	cursor:pointer;
+}
+.was-validated .custom-control-input:valid ~ .custom-control-label::before, .custom-control-input.is-valid ~ .custom-control-label::before {
+    background-color: #d4d4d6;
+}
+
+	
+	.guide{
+		animation: blink 1s linear infinite;
+	}
+	@keyframes blink{
+		0%{opacity: 0;}
+		50%{opacity: .5;}
+		100%{opacity: 1;}
+	}
+
+

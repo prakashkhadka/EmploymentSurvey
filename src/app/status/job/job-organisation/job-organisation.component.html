@@ -1,0 +1,80 @@
+<p class="lead text-center">What is your organisation type ?</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="government" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="Government" 
+      			name="organisationType" 
+      			[(ngModel)]="surveyService.organisationType"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="government">Government</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="private" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Private" 
+      			name="organisationType" 
+      			[(ngModel)]="surveyService.organisationType"
+      			required
+	      		>
+      		<label class="custom-control-label" for="business">Private</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="ngoingo" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="NGO / INGO" 
+      			name="organisationType" 
+      			[(ngModel)]="surveyService.organisationType"
+      			required
+	      		>
+      		<label class="custom-control-label" for="ngoingo">NGO / INGO</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="co-operative" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Co-operative" 
+      			name="organisationType" 
+      			[(ngModel)]="surveyService.organisationType"
+      			required
+	      		>
+      		<label class="custom-control-label" for="co-operative">Co-operative</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="education-institution" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="Education Institution" 
+      			name="organisationType" 
+      			[(ngModel)]="surveyService.organisationType"
+      			required
+	      		>
+      		<label class="custom-control-label" for="education-institution">Education Institution</label>
+      	</div>
+      	
+ 	</div>
+
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6">
+		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/job/job-level">Next</button>
+	</div>
+</div>
+					

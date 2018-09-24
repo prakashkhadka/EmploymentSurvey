@@ -1,0 +1,81 @@
+<p class="lead text-center">When did you retire ? (कति बर्ष अघि रिटायर हुनुभयो ?)</p>
+<div class="row text-muted small justify-content-center">Please select one</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="group-1" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="1-2 years ago" 
+      			name="retiredTime" 
+      			[(ngModel)]="surveyService.retiredTime"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="group-1">1-2 years ago</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="group-2" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="2-4 years ago" 
+      			name="retiredTime" 
+      			[(ngModel)]="surveyService.retiredTime"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-2">2-4 years ago</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-3" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="4-6 years ago" 
+      			name="retiredTime" 
+      			[(ngModel)]="surveyService.retiredTime"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-3">4-6 years ago</label>
+      	</div>
+
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-4" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="6-10 years ago" 
+      			name="retiredTime" 
+      			[(ngModel)]="surveyService.retiredTime"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-4">6-10 years ago</label>
+      	</div>
+
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
+      		<input 
+      			id="group-5" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="More than 10 years ago" 
+      			name="retiredTime" 
+      			[(ngModel)]="surveyService.retiredTime"
+      			required
+	      		>
+      		<label class="custom-control-label" for="group-5">More than 10 years ago</label>
+      	</div>
+ 	</div>
+
+</form>
+
+<hr>
+
+<div class="row text-center">
+	<div class="col xs-6">
+		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+	</div>
+	<div class="col xs-6">
+		<button type="submit" [disabled]='f.invalid' class="btn btn-outline-success btn-smal" routerLink="/retired/service-duration">Next</button>
+	</div>
+</div>
+					
