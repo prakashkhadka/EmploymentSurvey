@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { SurveyService } from '../../../survey.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-number',
@@ -10,10 +11,21 @@ import { SurveyService } from '../../../survey.service';
 })
 export class EmployeeNumberComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location:Location) { }
+  constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
 
   ngOnInit() {
   	//console.log("Business type is: " + this.surveyService.surveyData.BusinessType);
+  }
+
+  isInvalid:boolean = false;
+  onSubmit(){
+  	//console.log("onCourse");
+  	if(this.surveyService.employeeNumber){
+  		this.router.navigate(['/business/business-inheritance']);
+  	}
+  	else{
+  		this.isInvalid = true;
+  	}
   }
 
   goBack(){

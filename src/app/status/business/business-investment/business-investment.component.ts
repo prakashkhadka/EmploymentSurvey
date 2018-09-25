@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { SurveyService } from '../../../survey.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-business-investment',
@@ -10,9 +11,20 @@ import { SurveyService } from '../../../survey.service';
 })
 export class BusinessInvestmentComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location:Location) { }
+  constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
 
   ngOnInit() {
+  }
+
+  isInvalid:boolean = false;
+  onSubmit(){
+  	//console.log("onCourse");
+  	if(this.surveyService.businessInvestment){
+  		this.router.navigate(['/business/business-number']);
+  	}
+  	else{
+  		this.isInvalid = true;
+  	}
   }
 
   goBack(){

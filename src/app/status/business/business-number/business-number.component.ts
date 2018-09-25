@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { SurveyService } from '../../../survey.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-business-number',
@@ -10,12 +11,22 @@ import { SurveyService } from '../../../survey.service';
 })
 export class BusinessNumberComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location:Location) { }
+  constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
 
-  showThis:boolean;
+  
   
   ngOnInit() {
-  	this.showThis = false;
+  	
+  }
+
+  isInvalid:boolean = false;
+  onSubmit(){
+  	if(this.surveyService.businessNumber){
+  		this.router.navigate(['/name']);
+  	}
+  	else{
+  		this.isInvalid = true;
+  	}
   }
 
   goBack(){
@@ -24,12 +35,6 @@ export class BusinessNumberComponent implements OnInit {
 
   
 
-  yesSelected(){
-  	this.showThis = false;
-  }
-  noSelected(){
-  	console.log("No selected");
-  	this.showThis = true;
-  }
+  
 
 }
