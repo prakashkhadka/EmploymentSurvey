@@ -1,220 +1,151 @@
-<section id="signup-form" class="mt-3">
-	<div class="container">
-		<div class="row justify-content-md-center">
-			<div class="col-sm-8 col-xs-12">
-				<h4 class="text-success font-weight-normal text-center">Employment Survey</h4>
-				<hr>
-				<p class="text-muted text-center">Please fill up the following form.</p>
-				<div class="card p-2 pt-0 mt-4 c-main-bg-color border-success">
-					<div class="card-body text-success">
-						
-						<p class="lead text-center">What did you study ?</p>
-						<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid">	
-							<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
-						</div>
-						<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
-							<p>Please select one</p>
-						</div>
-						<form #f="ngForm">
-							<div class="row mt-4">
-								<div class="col-xs-12 custom-control custom-radio">
-						      		<input 
-						      			id="icom" 
-						      			type="radio" 
-						      			class="custom-control-input" 
-						      			value="I.Com" 
-						      			name="level" 
-						      			[(ngModel)]="surveyService.level"
-						      			#level="ngModel"
-						      			required 
-							      		>
-						      		<label class="custom-control-label" for="icom">I.Com.</label>
-						      	</div>
-						      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="ia" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="I.A." 
-						      			name="level" 
-						      			[(ngModel)]="surveyService.level"
-						      			#level="ngModel"
-						      			required
-							      		>
-						      		<label class="custom-control-label" for="ia">I.A.</label>
-						      	</div>
-						      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="ied" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="I.Ed." 
-						      			name="level" 
-						      			[(ngModel)]="surveyService.level"
-						      			#level="ngModel"
-						      			required
-							      		>
-						      		<label class="custom-control-label" for="ied">I.Ed.</label>
-						      	</div>
-						      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="isc" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="I.Sc." 
-						      			name="level" 
-						      			[(ngModel)]="surveyService.level"
-						      			#level="ngModel"
-						      			required
-							      		>
-						      		<label class="custom-control-label" for="isc">I.Sc.</label>
-						      	</div>
-						      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="bbs" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="BBS" 
-						      			name="level" 
-						      			[(ngModel)]="surveyService.level"
-						      			#level="ngModel"
-						      			required
-							      		>
-						      		<label class="custom-control-label" for="bbs">BBS</label>
-						      	</div>
-						      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="ba" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="B.A." 
-						      			name="level" 
-						      			[(ngModel)]="surveyService.level"
-						      			#level="ngModel"
-						      			required
-							      		>
-						      		<label class="custom-control-label" for="ba">B.A.</label>
-						      	</div>
-						      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="bed" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="B.Ed." 
-						      			name="level" 
-						      			[(ngModel)]="surveyService.level"
-						      			#level="ngModel"
-						      			required
-							      		>
-						      		<label class="custom-control-label" for="bed">B.Ed.</label>
-						      	</div>
-						      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="mbs" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="MBS" 
-						      			name="level" 
-						      			[(ngModel)]="surveyService.level"
-						      			#level="ngModel"
-						      			required
-							      		>
-						      		<label class="custom-control-label" for="mbs">MBS</label>
-						      	</div>
-						      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="ma" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="M.A." 
-						      			name="level" 
-						      			[(ngModel)]="surveyService.level"
-						      			#level="ngModel"
-						      			required
-							      		>
-						      		<label class="custom-control-label" for="ma">M.A.</label>
-						      	</div>
-						      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="med" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="M.Ed." 
-						      			name="level" 
-						      			[(ngModel)]="surveyService.level"
-						      			#level="ngModel"
-						      			required 
-							      		>
-						      		<label class="custom-control-label" for="med">M.Ed.</label>
-						      	</div>
-					     	</div>
-					     	<!--
-					     	<div class="row text-center">
-					     		<div *ngIf="isInvalid && f.invalid" class="col">
-		                            <p class="text-danger"><small>Please select one to proceed</small></p>
-		                        </div>
-					     	</div>
-					     	-->
+<p class="lead text-center">What did you study ?</p>
+<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid">	
+	<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
+</div>
+<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
+	<p>Please select one</p>
+</div>
+<form #f="ngForm">
+	<div class="row mt-4">
+		<div class="col-xs-12 custom-control custom-radio">
+      		<input 
+      			id="icom" 
+      			type="radio" 
+      			class="custom-control-input" 
+      			value="I.Com" 
+      			name="level" 
+      			[(ngModel)]="surveyService.level"
+      			#level="ngModel"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="icom">I.Com.</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="ia" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="I.A." 
+      			name="level" 
+      			[(ngModel)]="surveyService.level"
+      			#level="ngModel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="ia">I.A.</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="ied" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="I.Ed." 
+      			name="level" 
+      			[(ngModel)]="surveyService.level"
+      			#level="ngModel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="ied">I.Ed.</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="isc" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="I.Sc." 
+      			name="level" 
+      			[(ngModel)]="surveyService.level"
+      			#level="ngModel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="isc">I.Sc.</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="bbs" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="BBS" 
+      			name="level" 
+      			[(ngModel)]="surveyService.level"
+      			#level="ngModel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="bbs">BBS</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="ba" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="B.A." 
+      			name="level" 
+      			[(ngModel)]="surveyService.level"
+      			#level="ngModel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="ba">B.A.</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="bed" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="B.Ed." 
+      			name="level" 
+      			[(ngModel)]="surveyService.level"
+      			#level="ngModel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="bed">B.Ed.</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="mbs" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="MBS" 
+      			name="level" 
+      			[(ngModel)]="surveyService.level"
+      			#level="ngModel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="mbs">MBS</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="ma" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="M.A." 
+      			name="level" 
+      			[(ngModel)]="surveyService.level"
+      			#level="ngModel"
+      			required
+	      		>
+      		<label class="custom-control-label" for="ma">M.A.</label>
+      	</div>
+      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      		<input 
+      			id="med" 
+      			type="radio" 
+      			class="btn btn-outline-primary custom-control-input" 
+      			value="M.Ed." 
+      			name="level" 
+      			[(ngModel)]="surveyService.level"
+      			#level="ngModel"
+      			required 
+	      		>
+      		<label class="custom-control-label" for="med">M.Ed.</label>
+      	</div>
+ 	</div>
+ 	
+	<hr>
 
-					    
-							<!--
-							<hr>
-							<div>
-								<p class="lead text-center">Did you complete this course ?</p>
-								<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="yes" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="Yes" 
-						      			name="completed" 
-						      			[(ngModel)]="surveyService.completed"
-						      			#completed="ngModel"
-						      			required
-							      		>
-						      		<label class="custom-control-label" for="yes">Yes</label>
-						      	</div>
-						      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-						      		<input 
-						      			id="no" 
-						      			type="radio" 
-						      			class="btn btn-outline-primary custom-control-input" 
-						      			value="No" 
-						      			name="completed" 
-						      			[(ngModel)]="surveyService.completed"
-						      			#completed="ngModel"
-						      			required
-						      			[ngClass]="{ 'is-invalid': completed.invalid && completed.touched, 'is-valid': completed.valid && completed.touched }" 
-							      		>
-							      		
-						      		<label class="custom-control-label" for="no">No</label>
-						      		<div *ngIf="completed.invalid && completed.touched" class="invalid-feedback">
-				                            <div *ngIf="completed.errors.required">Please select one option</div>
-				                        </div>
-						      	</div>
-							</div>
-						-->
-
-							<hr>
-
-							<div class="row text-center">
-								<div class="col xs-6">
-									<button class="btn btn-outline-success btn-small" (click)="goBack()">Back</button>
-								</div>
-								<!--
-								<div class="col xs-6" >
-									<button type="submit" [disabled]="f.invalid"  class="btn btn-outline-success btn-smal" routerLink="/highest-education">Next</button>
-									routerLink="/year-joined"
-								</div>
-							-->
-								<div class="col xs-6">
-									<button type="submit" (click)="onSubmit()"  class="btn btn-outline-success btn-small" >Next</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+	<div class="row">
+		
+		<div class="col">
+			<button type="submit" (click)="onSubmit()"  class="btn btn-outline-success float-right" >Next</button>
 		</div>
 	</div>
-</section>
+</form>
+

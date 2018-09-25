@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 import { SurveyService } from '../../../survey.service';
 
 @Component({
@@ -10,9 +11,20 @@ import { SurveyService } from '../../../survey.service';
 })
 export class JobSatisfactionComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location:Location) { }
+  constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
 
   ngOnInit() {
+  }
+
+  isInvalid:boolean = false;
+  onSubmit(){
+  	//console.log("onCourse");
+  	if(this.surveyService.jobSatisfactionLevel){
+  		this.router.navigate(['/job/job-change']);
+  	}
+  	else{
+  		this.isInvalid = true;
+  	}
   }
 
   goBack(){

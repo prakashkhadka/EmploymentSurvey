@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SurveyService } from '../../../survey.service'
 import { NgForm } from "@angular/forms";
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-job-type',
@@ -10,9 +11,20 @@ import { Location } from '@angular/common';
 })
 export class JobTypeComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location:Location) { }
+  constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
 
   ngOnInit() {
+  }
+
+  isInvalid:boolean = false;
+  onSubmit(){
+  	//console.log("onCourse");
+  	if(this.surveyService.jobType){
+  		this.router.navigate(['/job/organisation-type']);
+  	}
+  	else{
+  		this.isInvalid = true;
+  	}
   }
 
   goBack(){

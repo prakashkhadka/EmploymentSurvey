@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { SurveyService } from '../../../survey.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-job-change',
@@ -10,9 +11,20 @@ import { SurveyService } from '../../../survey.service';
 })
 export class JobChangeComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location:Location) { }
+  constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
 
   ngOnInit() {
+  }
+
+  isInvalid:boolean = false;
+  onSubmit(){
+  	//console.log("onCourse");
+  	if(this.surveyService.pastJobChange){
+  		this.router.navigate(['job/future-job-change']);
+  	}
+  	else{
+  		this.isInvalid = true;
+  	}
   }
 
   goBack(){

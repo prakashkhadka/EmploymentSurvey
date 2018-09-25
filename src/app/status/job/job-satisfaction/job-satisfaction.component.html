@@ -1,5 +1,10 @@
 <p class="lead text-center">How satisfied are you from your current job?</p>
-<div class="row text-muted small justify-content-center">Please slide left or right:</div>
+<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid">	
+	<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please slide left or right <span *ngIf="isInvalid">to proceed</span></p>
+</div>
+<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
+	<p>Please slide left or right</p>
+</div>
 <form #f="ngForm">
 	<div class="row mt-4">
 		<!--
@@ -15,7 +20,7 @@
   				class="slider" 
   				id="myRange"
   				name="job-satisfaction"
-  				[(ngModel)]="surveyService.jobSatiscationLevel"
+  				[(ngModel)]="surveyService.jobSatisfactionLevel"
   				required 
   				>
       	</div>
@@ -23,7 +28,7 @@
  	</div>
  	<div class="row">
  		<div class="col text-center">
-  			<h5>{{surveyService.jobSatiscationLevel}}</h5>
+  			<h5>{{surveyService.jobSatisfactionLevel}}</h5>
   			<p>Higher value = higher job satisfaction</p>
   		</div>
   	</div>
@@ -36,7 +41,7 @@
 		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
 	</div>
 	<div class="col xs-6">
-		<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/job/job-change">Next</button>
+		<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-smal">Next</button>
 	</div>
 </div>
 					

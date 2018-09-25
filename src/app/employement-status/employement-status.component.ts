@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SurveyService } from '../survey.service';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employement-status',
@@ -10,10 +11,41 @@ import { Location } from '@angular/common';
 })
 export class EmployementStatusComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location:Location) { }
+  constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
 
   ngOnInit() {
-  	console.log(this.surveyService.surveyData);
+  	
+  }
+
+  isInvalid:boolean = false;
+  onSubmit(){
+  	if(this.surveyService.employmentStatus == 'Job'){
+  		this.router.navigate(['/job']);
+  	}
+  	else if(this.surveyService.employmentStatus == 'Business'){
+  		this.router.navigate(['/business']);
+  	}
+  	else if(this.surveyService.employmentStatus == 'Study'){
+  		this.router.navigate(['/study']);
+  	}
+  	else if(this.surveyService.employmentStatus == 'Foreign Study'){
+  		this.router.navigate(['/foreign-study']);
+  	}
+  	else if(this.surveyService.employmentStatus == 'Agriculture'){
+  		this.router.navigate(['/agriculture']);
+  	}
+  	else if(this.surveyService.employmentStatus == 'Foreign Employment'){
+  		this.router.navigate(['/country']);
+  	}
+  	else if(this.surveyService.employmentStatus == 'Housewife'){
+  		this.router.navigate(['/housewife']);
+  	}
+  	else if(this.surveyService.employmentStatus == 'Retired'){
+  		this.router.navigate(['/retired']);
+  	}
+  	else{
+  		this.isInvalid = true;
+  	}
   }
 
   goBack(){

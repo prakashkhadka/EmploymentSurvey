@@ -1,5 +1,10 @@
 <p class="lead text-center">Did you change your job in last 4 years ?</p>
-<div class="row text-muted small justify-content-center">Please select one</div>
+<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid">	
+	<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
+</div>
+<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
+	<p>Please select one</p>
+</div>
 <form #f="ngForm">
 	<div>
 		<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
@@ -35,7 +40,7 @@
 			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
 		</div>
 		<div class="col xs-6">
-			<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/job/future-job-change">Next</button>
+			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-smal">Next</button>
 		</div>
 	</div>
 </form>

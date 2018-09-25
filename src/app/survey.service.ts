@@ -37,7 +37,7 @@ export class SurveyService {
   businessNumber:string;
   jobLevel:string;
   jobType:string;
-  organiationType:string;
+  organisationType:string;
   jobIncome:string;
   jobOtherActivites:string;
   jobSatisfactionLevel:string;
