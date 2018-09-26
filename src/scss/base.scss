@@ -59,15 +59,6 @@ button[disabled]{
 	font-size:80%;
 	color: #dc3545;
 }
-.modal-content{
-	margin-top: 100px;
-}
-
-
-.c-modal-bg-color{
-	background-color: rgba(0, 0, 0, 0.7)
-	
-}
 
 .sectionDescription{
 	text-indent:0px;
@@ -91,6 +82,15 @@ button[disabled]{
 
 .hide-it{
 	display:none;
+}
+#contact-us{
+	border:0px solid white !important;
+	margin-right:0px;
+	margin-left:0px;
+}
+footer{
+	min-height:100px;
+	background-color:$navBgColor
 }
 
 

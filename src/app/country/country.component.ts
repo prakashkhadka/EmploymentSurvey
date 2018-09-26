@@ -19,7 +19,6 @@ export class CountryComponent implements OnInit {
   isInvalid:boolean = false;
   showGoBackMessage:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.country && this.surveyService.country.length > 1 && this.surveyService.country.length < 29){
   		if(this.surveyService.location == 'Overseas'){
   			this.router.navigate(['/overseas-purpose']);

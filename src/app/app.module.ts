@@ -33,6 +33,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthService } from './auth/auth.service';
 import { AdminEntryComponent } from './admin/admin-entry/admin-entry.component';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { MessageService } from './contact-us/message.service';
 import { BusinessInheritanceComponent } from './status/business/business-inheritance/business-inheritance.component';
 import { BusinessDurationComponent } from './status/business/business-duration/business-duration.component';
 import { BusinessInvestmentComponent } from './status/business/business-investment/business-investment.component';
@@ -62,6 +63,13 @@ import { CourseCompletedComponent } from './course-completed/course-completed.co
 import { UnderDevelopmentComponent } from './under-development/under-development.component';
 import { EmailComponent } from './email/email.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { FooterComponent } from './footer/footer.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { PurposeComponent } from './purpose/purpose.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+
 
 
 @NgModule({
@@ -120,6 +128,12 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
     UnderDevelopmentComponent,
     EmailComponent,
     ThankYouComponent,
+    FooterComponent,
+    PrivacyPolicyComponent,
+    TermsConditionsComponent,
+    ContactUsComponent,
+    PurposeComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -129,7 +143,8 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
   providers: [
   	SurveyService,
   	AuthService,
-  	AuthGuardService
+  	AuthGuardService,
+  	MessageService
   ],
   bootstrap: [AppComponent]
 })

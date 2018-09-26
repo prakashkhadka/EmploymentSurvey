@@ -9,13 +9,13 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  	title = 'app';
 
-  constructor(private authService:AuthService){
+  	constructor(private authService:AuthService){
 
-  }
+  	}
 
-  	ngOnInit(){
+	ngOnInit(){
 		firebase.initializeApp({
 			apiKey: "AIzaSyDAKMVWEONGvKamqT-WntZRI7RlSo4bGmM",
 		    authDomain: "emplymentsurvey.firebaseapp.com",
@@ -23,8 +23,7 @@ export class AppComponent {
 		    projectId: "emplymentsurvey",
 		    storageBucket: "emplymentsurvey.appspot.com",
 		    messagingSenderId: "513797163782"
-	});
-			this.authService.loginCheck();
-
+		});
+		this.authService.loginCheck();
 	}
 }

@@ -25,11 +25,10 @@ export class CourseComponent implements OnInit {
   	else{
   		this.isInvalid = true;
   	}
-  	
   }
 
   goBack() {
-    this.location.back(); // <-- go back to previous location on cancel
+    this.location.back();
   }
 
 }

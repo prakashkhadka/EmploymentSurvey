@@ -18,7 +18,6 @@ export class CourseCompletedComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.completed){
   		this.router.navigate(['/highest-education']);
   	}

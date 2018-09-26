@@ -39,6 +39,12 @@ import { FeFurtherstayComponent } from '../status/foreign-employment/fe-furthers
 
 import { LoginComponent } from '../auth/login/login.component';
 import { AdminEntryComponent } from '../admin/admin-entry/admin-entry.component';
+import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from '../terms-conditions/terms-conditions.component';
+import { ContactUsComponent } from '../contact-us/contact-us.component';
+import { PurposeComponent } from '../purpose/purpose.component';
+import { AboutUsComponent } from '../about-us/about-us.component';
+
 import { BusinessInheritanceComponent } from '../status/business/business-inheritance/business-inheritance.component';
 import { BusinessDurationComponent } from '../status/business/business-duration/business-duration.component';
 import { BusinessInvestmentComponent } from '../status/business/business-investment/business-investment.component';
@@ -76,6 +82,11 @@ import { UnderDevelopmentComponent } from '../under-development/under-developmen
 const appRoutes: Routes = [
   {path:'', component:CourseComponent},
   {path:'admin', component:LoginComponent},
+  {path:'privacy-policy', component:PrivacyPolicyComponent},
+  {path:'terms-conditions', component:TermsConditionsComponent},
+  {path:'contact-us', component:ContactUsComponent},
+  {path:'purpose', component:PurposeComponent},
+  {path:'about-us', component:AboutUsComponent},
   {path:'admin/admin-panel', canActivate: [AuthGuardService], component:AdminEntryComponent},
   {path:'year-joined', component: YearJoinedComponent},
   {path:'course', component: CourseComponent},
@@ -135,7 +146,7 @@ const appRoutes: Routes = [
   	{path:'', component:HousewifeJobwishComponent}
   ]},
   {path:'email', component:EmailComponent},
-  {path:'thank-you', component:ThankYouComponent};
+  {path:'thank-you', component:ThankYouComponent}
 
 
 ]
