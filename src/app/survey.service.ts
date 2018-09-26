@@ -44,20 +44,20 @@ export class SurveyService {
   pastJobChange:string;
   futureJobChange:string;
   overseasPurpose:string;
-  FeDuration:string;
-  FeIncome:string;
-  FeWorkDayNumber:string;
-  FeOvertime:string;
-  FeOvertimeHours:string;
-  FeFurtherStay:string;
+  feDuration:string;
+  feIncome:string;
+  feWorkDayNumber:string;
+  feOvertime:string;
+  feOvertimeHours:string;
+  feFurtherStay:string;
   agricultureType:string;
-  AgricultureIncome:string;
+  agricultureIncome:string;
   afterStudy:string;
   dreamJob:string;
   retiredTime:string;
   serviceDuration:string;
   pension:string;
-  housewifeJobwish:string;
+  housewifeWish:string;
   email:string;
   consent:string;
 

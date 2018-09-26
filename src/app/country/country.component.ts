@@ -17,10 +17,20 @@ export class CountryComponent implements OnInit {
   }
 
   isInvalid:boolean = false;
+  showGoBackMessage:boolean = false;
   onSubmit(){
   	//console.log("onCourse");
   	if(this.surveyService.country && this.surveyService.country.length > 1 && this.surveyService.country.length < 29){
-  		this.router.navigate(['/overseas-purpose']);
+  		if(this.surveyService.location == 'Overseas'){
+  			this.router.navigate(['/overseas-purpose']);
+  		}
+  		else if(this.surveyService.employmentStatus == 'Foreign Employment'){
+	  		this.router.navigate(['/foreign-employment'])
+	  	}
+	  	else{
+	  		this.isInvalid = true;
+	  		this.showGoBackMessage = true;
+	  	}
   	}
   	else{
   		this.isInvalid = true;

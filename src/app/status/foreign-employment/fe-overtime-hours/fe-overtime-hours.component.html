@@ -1,5 +1,10 @@
 <p class="lead text-center">How many overtime hours do you work in a week ?</p>
-<div class="row text-muted small justify-content-center">Please select one</div>
+<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid">	
+	<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
+</div>
+<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
+	<p>Please select one</p>
+</div>
 <form #f="ngForm">
 	<div class="row mt-4">
 		<div class="col-xs-12 custom-control custom-radio">
@@ -8,8 +13,8 @@
       			type="radio" 
       			class="custom-control-input" 
       			value="5-10 Hours" 
-      			name="FeOvertimeHours" 
-      			[(ngModel)]="surveyService.FeOvertimeHours"
+      			name="feOvertimeHours" 
+      			[(ngModel)]="surveyService.feOvertimeHours"
       			required 
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="group-1"> 5-10 hours a week</label>
@@ -20,8 +25,8 @@
       			type="radio" 
       			class="btn btn-outline-primary custom-control-input" 
       			value="10-15" 
-      			name="FeOvertimeHours" 
-      			[(ngModel)]="surveyService.FeOvertimeHours"
+      			name="feOvertimeHours" 
+      			[(ngModel)]="surveyService.feOvertimeHours"
       			required
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="group-2">10-15 hours a week</label>
@@ -32,8 +37,8 @@
       			type="radio" 
       			class="btn btn-outline-primary custom-control-input" 
       			value="15-20" 
-      			name="FeOvertimeHours" 
-      			[(ngModel)]="surveyService.FeOvertimeHours"
+      			name="feOvertimeHours" 
+      			[(ngModel)]="surveyService.feOvertimeHours"
       			required
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="group-3">15-20 hours a week</label>
@@ -44,8 +49,8 @@
       			type="radio" 
       			class="btn btn-outline-primary custom-control-input" 
       			value="20-25" 
-      			name="FeOvertimeHours" 
-      			[(ngModel)]="surveyService.FeOvertimeHours"
+      			name="feOvertimeHours" 
+      			[(ngModel)]="surveyService.feOvertimeHours"
       			required
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="group-4">20-25 hours a week</label>
@@ -56,8 +61,8 @@
       			type="radio" 
       			class="btn btn-outline-primary custom-control-input" 
       			value="25 above" 
-      			name="FeOvertimeHours" 
-      			[(ngModel)]="surveyService.FeOvertimeHours"
+      			name="feOvertimeHours" 
+      			[(ngModel)]="surveyService.feOvertimeHours"
       			required
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="group-5">More than 25 hours a week</label>
@@ -71,7 +76,7 @@
 			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
 		</div>
 		<div class="col xs-6">
-			<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="">Next</button>
+			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-smal">Next</button>
 		</div>
 	</div>
 </form>

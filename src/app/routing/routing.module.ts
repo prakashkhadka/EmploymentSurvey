@@ -34,6 +34,9 @@ import { FeIncomeComponent } from '../status/foreign-employment/fe-income/fe-inc
 import { FeWorkdaysNumberComponent } from '../status/foreign-employment/fe-workdays-number/fe-workdays-number.component';
 import { FeOvertimeComponent } from '../status/foreign-employment/fe-overtime/fe-overtime.component';
 import { FeOvertimeHoursComponent } from '../status/foreign-employment/fe-overtime-hours/fe-overtime-hours.component';
+import { FeFurtherstayComponent } from '../status/foreign-employment/fe-furtherstay/fe-furtherstay.component';
+
+
 import { LoginComponent } from '../auth/login/login.component';
 import { AdminEntryComponent } from '../admin/admin-entry/admin-entry.component';
 import { BusinessInheritanceComponent } from '../status/business/business-inheritance/business-inheritance.component';
@@ -105,11 +108,12 @@ const appRoutes: Routes = [
   	{path:'business-number', component:BusinessNumberComponent}
   ]},
   {path:'foreign-employment', component:ForeignEmployementEntryComponent, children:[
-  	{path:'duration', component:FeDurationComponent},
+  	{path:'', component:FeDurationComponent},
   	{path:'income', component:FeIncomeComponent},
   	{path:'workdays-number', component:FeWorkdaysNumberComponent},
   	{path:'overtime', component:FeOvertimeComponent},
-  	{path:'overtime-hours', component:FeOvertimeHoursComponent}
+  	{path:'overtime-hours', component:FeOvertimeHoursComponent},
+  	{path: 'further-stay', component:FeFurtherstayComponent}
   ]},
   {path:'agriculture', component:AgricultureEntryComponent, children:[
   	{path:'', component:AgricultureTypeComponent},

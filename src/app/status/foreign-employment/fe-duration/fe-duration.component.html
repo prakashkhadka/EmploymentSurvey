@@ -1,5 +1,10 @@
 <p class="lead text-center">How long have you been working ?</p>
-<div class="row text-muted small justify-content-center">Please select one</div>
+<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid">	
+	<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
+</div>
+<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
+	<p>Please select one</p>
+</div>
 <form #f="ngForm">
 	<div class="row mt-4">
 		<div class="col-xs-12 custom-control custom-radio">
@@ -8,8 +13,8 @@
       			type="radio" 
       			class="custom-control-input" 
       			value="Less than one year" 
-      			name="FeDuration" 
-      			[(ngModel)]="surveyService.FeDuration"
+      			name="feDuration" 
+      			[(ngModel)]="surveyService.feDuration"
       			required 
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="less-than-one-year">Less than 1 year</label>
@@ -20,8 +25,8 @@
       			type="radio" 
       			class="btn btn-outline-primary custom-control-input" 
       			value="1-3" 
-      			name="FeDuration" 
-      			[(ngModel)]="surveyService.FeDuration"
+      			name="feDuration" 
+      			[(ngModel)]="surveyService.feDuration"
       			required
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="1-3-years">1-3 Years</label>
@@ -32,8 +37,8 @@
       			type="radio" 
       			class="btn btn-outline-primary custom-control-input" 
       			value="3-5" 
-      			name="FeDuration" 
-      			[(ngModel)]="surveyService.FeDuration"
+      			name="feDuration" 
+      			[(ngModel)]="surveyService.feDuration"
       			required
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="3-5-years">3-5 Years</label>
@@ -44,8 +49,8 @@
       			type="radio" 
       			class="btn btn-outline-primary custom-control-input" 
       			value="5-8" 
-      			name="FeDuration" 
-      			[(ngModel)]="surveyService.FeDuration"
+      			name="feDuration" 
+      			[(ngModel)]="surveyService.feDuration"
       			required
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="5-8-years">5-8 Years</label>
@@ -56,8 +61,8 @@
       			type="radio" 
       			class="btn btn-outline-primary custom-control-input" 
       			value="8-10" 
-      			name="FeDuration" 
-      			[(ngModel)]="surveyService.FeDuration"
+      			name="feDuration" 
+      			[(ngModel)]="surveyService.feDuration"
       			required
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="8-10-years">8-10 Years</label>
@@ -68,8 +73,8 @@
       			type="radio" 
       			class="btn btn-outline-primary custom-control-input" 
       			value="10-15" 
-      			name="FeDuration" 
-      			[(ngModel)]="surveyService.FeDuration"
+      			name="feDuration" 
+      			[(ngModel)]="surveyService.feDuration"
       			required
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="1-15-years">10-15 Years</label>
@@ -80,8 +85,8 @@
       			type="radio" 
       			class="btn btn-outline-primary custom-control-input" 
       			value="More than 15 years" 
-      			name="FeDuration" 
-      			[(ngModel)]="surveyService.FeDuration"
+      			name="feDuration" 
+      			[(ngModel)]="surveyService.feDuration"
       			required
 	      		>
       		<label class="custom-control-label pl-2 ml-3" for="ied">Above 15 years</label>
@@ -96,7 +101,7 @@
 			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
 		</div>
 		<div class="col xs-6">
-			<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/foreign-employment/income">Next</button>
+			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-smal">Next</button>
 		</div>
 	</div>
 </form>

@@ -1,5 +1,10 @@
 <p class="lead text-center">What is your dream job after completing this course ?</p>
-<div class="row text-muted small justify-content-center">Please enter your dream job below</div>
+<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid">	
+	<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please enter your dream job below <span *ngIf="isInvalid">to proceed</span></p>
+</div>
+<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
+	<p>Please enter your dream job below</p>
+</div>
 <div class="card-body text-success">
 <form #f="ngForm">
 	
@@ -37,7 +42,7 @@
 				<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
 			</div>
 			<div class="col xs-6">
-				<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/study/dream-job">Next</button>
+				<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-smal">Next</button>
 			</div>
 		</div>
 </form>

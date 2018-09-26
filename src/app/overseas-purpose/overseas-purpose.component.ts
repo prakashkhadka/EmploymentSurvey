@@ -18,19 +18,25 @@ export class OverseasPurposeComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
-  	if(this.surveyService.overseasPurpose == 'Work'){
-  		this.router.navigate(['/foreign-employment/duration']);
-  	}
-  	else if(this.surveyService.overseasPurpose == 'Study'){
-  		this.router.navigate(['/foreign-study']);
-  	}
-  	else if(this.surveyService.overseasPurpose == "NRN"){
-  		this.router.navigate(['/name']);
+  	if(this.surveyService.overseasPurpose){
+  		if(this.surveyService.overseasPurpose == 'Work'){
+	  		this.router.navigate(['/foreign-employment']);
+	  	}
+	  	else if(this.surveyService.overseasPurpose == 'Study'){
+	  		//this.router.navigate(['/foreign-study']);
+	  		this.router.navigate(['/name']);
+	  	}
+	  	else if(this.surveyService.overseasPurpose == 'NRN'){
+	  		this.router.navigate(['/name']);
+	  	}
+	  	else{
+	  		this.isInvalid = true;
+	  	}
   	}
   	else{
   		this.isInvalid = true;
   	}
+  	
   }
 
   goBack(){
