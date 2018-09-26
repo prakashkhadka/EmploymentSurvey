@@ -7,12 +7,6 @@
 </div>
 <form #f="ngForm">
 	<div class="row mt-4">
-		<!--
-		<div class="form-group">
-		    <label for="formControlRange">Slide left or right.</label>
-		    <input type="range" class="form-control-range" id="formControlRange">
-	  	</div>
-	  -->
 	  	<div class="slidecontainer">
   			<input type="range" 
   				min="0" 
@@ -29,7 +23,7 @@
  	<div class="row">
  		<div class="col text-center">
   			<h5>{{surveyService.jobSatisfactionLevel}}</h5>
-  			<p>Higher value = higher job satisfaction</p>
+  			<p class="text-muted">Higher value = higher job satisfaction</p>
   		</div>
   	</div>
 </form>
@@ -38,10 +32,10 @@
 
 <div class="row text-center">
 	<div class="col xs-6">
-		<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+		<button class="btn btn-outline-success" (click)="goBack()">Back</button>
 	</div>
 	<div class="col xs-6">
-		<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-smal">Next</button>
+		<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
 	</div>
 </div>
 					

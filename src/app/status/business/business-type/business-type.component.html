@@ -19,7 +19,7 @@
       			required 
       			(change)="hideOther()"
 	      		>
-      		<label class="custom-control-label" for="production">Production</label>
+      		<label class="custom-control-label pl-2 ml-3" for="production">Production</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
       		<input 
@@ -33,7 +33,7 @@
       			required
       			(change)="hideOther()"
 	      		>
-      		<label class="custom-control-label" for="retail">Retail</label>
+      		<label class="custom-control-label pl-2 ml-3" for="retail">Retail</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
       		<input 
@@ -47,7 +47,7 @@
       			required
       			(change)="hideOther()"
 	      		>
-      		<label class="custom-control-label" for="service">Service</label>
+      		<label class="custom-control-label pl-2 ml-3" for="service">Service</label>
       	</div>
 
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
@@ -60,7 +60,7 @@
       			[checked]="showOther"
       			(change)="otherSelected()"
 	      		>
-      		<label class="custom-control-label" for="o">Other</label>
+      		<label class="custom-control-label pl-2 ml-3" for="o">Other</label>
       	</div>
 
       	<div class="form-group col-sm-12 col-xs-12 ml-3 mt-4" *ngIf="showOther" >
@@ -89,10 +89,10 @@
 
 	<div class="row text-center">
 		<div class="col xs-6">
-			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+			<button class="btn btn-outline-success" (click)="goBack()">Back</button>
 		</div>
 		<div class="col xs-6">
-			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-smal">Next</button>
+			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
 			
 		</div>
 	</div>

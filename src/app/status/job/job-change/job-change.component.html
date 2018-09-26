@@ -6,8 +6,8 @@
 	<p>Please select one</p>
 </div>
 <form #f="ngForm">
-	<div>
-		<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+	<div class="row text-center">
+		<div class="col custom-control custom-radio mt-2">
       		<input 
       			id="yes" 
       			type="radio" 
@@ -17,9 +17,9 @@
       			[(ngModel)]="surveyService.pastJobChange"
       			required
 	      		>
-      		<label class="custom-control-label" for="yes">Yes</label>
+      		<label class="custom-control-label pl-2" for="yes">Yes</label>
       	</div>
-      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+      	<div class="col custom-control custom-radio mt-2">
       		<input 
       			id="no" 
       			type="radio" 
@@ -29,7 +29,7 @@
       			[(ngModel)]="surveyService.pastJobChange"
       			required
 	      		>
-      		<label class="custom-control-label" for="no">No</label>
+      		<label class="custom-control-label pl-2" for="no">No</label>
       	</div>
 	</div>
 
@@ -37,10 +37,10 @@
 
 	<div class="row text-center">
 		<div class="col xs-6">
-			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+			<button class="btn btn-outline-success" (click)="goBack()">Back</button>
 		</div>
 		<div class="col xs-6">
-			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-smal">Next</button>
+			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
 		</div>
 	</div>
 </form>

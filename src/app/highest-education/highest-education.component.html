@@ -17,7 +17,7 @@
       			[(ngModel)]="surveyService.highestEducationLevel"
       			required 
 	      		>
-      		<label class="custom-control-label" for="icom">Intermediate</label>
+      		<label class="custom-control-label pl-2 ml-3" for="icom">Intermediate</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
       		<input 
@@ -29,7 +29,7 @@
       			[(ngModel)]="surveyService.highestEducationLevel"
       			required
 	      		>
-      		<label class="custom-control-label" for="ia">Bachelor</label>
+      		<label class="custom-control-label pl-2 ml-3" for="ia">Bachelor</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
       		<input 
@@ -41,7 +41,7 @@
       			[(ngModel)]="surveyService.highestEducationLevel"
       			required
 	      		>
-      		<label class="custom-control-label" for="ied">Master</label>
+      		<label class="custom-control-label pl-2 ml-3" for="ied">Master</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
       		<input 
@@ -53,7 +53,7 @@
       			[(ngModel)]="surveyService.highestEducationLevel"
       			required
 	      		>
-      		<label class="custom-control-label" for="bbs">Doctorate</label>
+      		<label class="custom-control-label pl-2 ml-3" for="bbs">Doctorate</label>
       	</div>
       	
  	</div>
@@ -62,10 +62,10 @@
 	
 	<div class="row text-center">
 		<div class="col xs-6">
-			<button class="btn btn-outline-success btn-small" (click)="goBack()">Back</button>
+			<button class="btn btn-outline-success" (click)="goBack()">Back</button>
 		</div>
 		<div class="col xs-6">
-			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-small"> Next</button>
+			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success"> Next</button>
 		</div>
 	</div>
 </form>

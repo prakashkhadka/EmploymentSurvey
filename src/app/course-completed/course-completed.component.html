@@ -18,7 +18,7 @@
       			#completed="ngModel"
       			required
 	      		>
-      		<label class="custom-control-label" for="yes">Yes</label>
+      		<label class="custom-control-label pl-2 ml-3" for="yes">Yes</label>
       	</div>
       	<div class="col custom-control custom-radio mt-2">
       		<input 
@@ -33,7 +33,7 @@
       			[ngClass]="{ 'is-invalid': completed.invalid && completed.touched, 'is-valid': completed.valid && completed.touched }" 
 	      		>
 	      		
-      		<label class="custom-control-label" for="no">No</label>
+      		<label class="custom-control-label pl-2 ml-3" for="no">No</label>
       		<div *ngIf="completed.invalid && completed.touched" class="invalid-feedback">
                     <div *ngIf="completed.errors.required">Please select one option</div>
                 </div>
@@ -46,10 +46,10 @@
 			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
 		</div>
 		<div class="col xs-6" *ngIf="completed.value != 'No'">
-			<button type="submit" (click)="onSubmit()"  class="btn btn-outline-success btn-smal">Next</button>
+			<button type="submit" (click)="onSubmit()"  class="btn btn-outline-success">Next</button>
 		</div>
 		<div class="col xs-6" *ngIf="completed.value=='No'">
-			<button type="submit" [disabled]="f.invalid"  class="btn btn-outline-success btn-smal" routerLink="/dropout-reason">Next</button>
+			<button type="submit" [disabled]="f.invalid"  class="btn btn-outline-success" routerLink="/dropout-reason">Next</button>
 		</div>
 	</div>
 </form>

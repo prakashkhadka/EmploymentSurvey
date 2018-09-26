@@ -17,7 +17,7 @@
       			[(ngModel)]="surveyService.dropoutReason"
       			required 
 	      		>
-      		<label class="custom-control-label" for="group-1">Couldn't pass</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-1">Couldn't pass</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
       		<input 
@@ -29,7 +29,7 @@
       			[(ngModel)]="surveyService.dropoutReason"
       			required
 	      		>
-      		<label class="custom-control-label" for="group-2">Financial difficulty</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-2">Financial difficulty</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
       		<input 
@@ -41,7 +41,7 @@
       			[(ngModel)]="surveyService.dropoutReason"
       			required
 	      		>
-      		<label class="custom-control-label" for="group-3">Foreign employment</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-3">Foreign employment</label>
       	</div>
 
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
@@ -54,7 +54,7 @@
       			[(ngModel)]="surveyService.dropoutReason"
       			required
 	      		>
-      		<label class="custom-control-label" for="group-4">Foreign study</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-4">Foreign study</label>
       	</div>
 
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
@@ -67,7 +67,7 @@
       			[(ngModel)]="surveyService.dropoutReason"
       			required
 	      		>
-      		<label class="custom-control-label" for="group-5">Migration / Moved to other place</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-5">Migration / Moved to other place</label>
       	</div>
 
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
@@ -80,7 +80,7 @@
       			[(ngModel)]="surveyService.dropoutReason"
       			required
 	      		>
-      		<label class="custom-control-label" for="group-6">Moved to other college</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-6">Moved to other college</label>
       	</div>
 
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" >
@@ -93,18 +93,18 @@
       			[(ngModel)]="surveyService.dropoutReason"
       			required
 	      		>
-      		<label class="custom-control-label" for="group-6">Other</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-6">Other</label>
       	</div>
  	</div>
- 	
+
  	<hr>
 
 	<div class="row text-center">
 		<div class="col xs-6">
-			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+			<button class="btn btn-outline-success" (click)="goBack()">Back</button>
 		</div>
 		<div class="col xs-6">
-			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-small">Next</button>
+			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
 		</div>
 	</div>
 </form>

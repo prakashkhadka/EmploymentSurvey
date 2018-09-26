@@ -36,9 +36,7 @@
                     <div *ngIf="isInvalid && showGoBackMessage" class="c-invalid-feedback ml-1 mt-2">
                         <div>Please click <a href="/">here</a> fill up the form from beginning.</div>
                     </div>
-
-		    </div>
-		    
+		    </div>   
 	    </div>
 
 	    <hr>
@@ -50,32 +48,6 @@
 			<div class="col xs-6">
 				<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
 			</div>
-			<!--
-			<div class="col xs-6" *ngIf="surveyService.location == 'Overseas'">
-				<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/overseas-purpose">NextOS</button>
-			</div>
-			<div class="col xs-6" *ngIf="surveyService.employmentStatus == 'Foreign Employment' && surveyService.location == 'Nepal'">
-				<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/foreign-employment/duration">Next FE</button>
-			</div>
-		-->
-			
 		</div>
     </div>
-	
-	<!--	
-	<div class="row">
-		<p class="lead">Do you live in Nepal or overseas ?</p>
-
-		<div class="row">
-			<div class="col xs-6">
-				<button class="btn btn-primary btn-smal">Nepal</button>
-			</div>
-			<div class="col xs-6">
-				<button class="btn btn-primary btn-smal">Overseas</button>
-			</div>
-		</div>
-	</div>
--->
-	
-		
 </form>				

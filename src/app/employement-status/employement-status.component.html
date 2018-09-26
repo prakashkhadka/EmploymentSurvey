@@ -17,7 +17,7 @@
       			[(ngModel)]="surveyService.employmentStatus"
       			required 
 	      		>
-      		<label class="custom-control-label" for="employee">Job</label>
+      		<label class="custom-control-label pl-2 ml-3" for="employee">Job</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
       		<input 
@@ -29,7 +29,7 @@
       			[(ngModel)]="surveyService.employmentStatus"
       			required
 	      		>
-      		<label class="custom-control-label" for="business">Business</label>
+      		<label class="custom-control-label pl-2 ml-3" for="business">Business</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" *ngIf="surveyService.location=='Nepal'">
       		<input 
@@ -41,7 +41,7 @@
       			[(ngModel)]="surveyService.employmentStatus"
       			required
 	      		>
-      		<label class="custom-control-label" for="study">Study</label>
+      		<label class="custom-control-label pl-2 ml-3" for="study">Study</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" *ngIf="surveyService.location=='Nepal'">
       		<input 
@@ -53,7 +53,7 @@
       			[(ngModel)]="surveyService.employmentStatus"
       			required
 	      		>
-      		<label class="custom-control-label" for="agriculture">Agriculture</label>
+      		<label class="custom-control-label pl-2 ml-3" for="agriculture">Agriculture</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" *ngIf="surveyService.location != 'Overseas'">
       		<input 
@@ -65,7 +65,7 @@
       			[(ngModel)]="surveyService.employmentStatus"
       			required
 	      		>
-      		<label class="custom-control-label" for="foreignemployment">Foreign Employment</label>
+      		<label class="custom-control-label pl-2 ml-3" for="foreignemployment">Foreign Employment</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" *ngIf="surveyService.gender == 'Female' && surveyService.location=='Nepal'">
       		<input 
@@ -77,7 +77,7 @@
       			[(ngModel)]="surveyService.employmentStatus"
       			required
 	      		>
-      		<label class="custom-control-label" for="housewife">Housewife</label>
+      		<label class="custom-control-label pl-2 ml-3" for="housewife">Housewife</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" *ngIf="surveyService.location=='Nepal'">
       		<input 
@@ -89,7 +89,7 @@
       			[(ngModel)]="surveyService.employmentStatus"
       			required
 	      		>
-      		<label class="custom-control-label" for="unemployed">Unemployed</label>
+      		<label class="custom-control-label pl-2 ml-3" for="unemployed">Unemployed</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2" *ngIf="surveyService.location=='Nepal'">
       		<input 
@@ -101,7 +101,7 @@
       			[(ngModel)]="surveyService.employmentStatus"
       			required
 	      		>
-      		<label class="custom-control-label" for="retired">Retired</label>
+      		<label class="custom-control-label pl-2 ml-3" for="retired">Retired</label>
       	</div>
  	</div>
 
@@ -109,21 +109,10 @@
 
 	<div class="row text-center">
 		<div class="col xs-6">
-			<button class="btn btn-outline-success btn-smal" (click)="goBack()">Back</button>
+			<button class="btn btn-outline-success" (click)="goBack()">Back</button>
 		</div>
 		<div class="col xs-6">
-			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success btn-smal">Next</button>
-			<!--
-			<button *ngIf="!surveyService.employmentStatus" [disabled]="f.invalid" class="btn btn-outline-success btn-smal">Next</button>
-			<button *ngIf="surveyService.employmentStatus == 'Job'" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/job">Next</button>
-			<button *ngIf="surveyService.employmentStatus == 'Business'" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/business">Next</button>
-			<button *ngIf="surveyService.employmentStatus == 'Study'" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/study">Next</button>
-			<button *ngIf="surveyService.employmentStatus == 'Foreign Study'" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/foreign-study">Next FS</button>
-			<button *ngIf="surveyService.employmentStatus == 'Agriculture'" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/agriculture">Next</button>
-			<button *ngIf="surveyService.employmentStatus == 'Foreign Employment'" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/country">Next</button>
-			<button *ngIf="surveyService.employmentStatus == 'Housewife'" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/housewife">Next</button>
-			<button *ngIf="surveyService.employmentStatus == 'Retired'" [disabled]="f.invalid" class="btn btn-outline-success btn-smal" routerLink="/retired">Next</button>
-		-->
+			<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
 		</div>
 	</div>
 </form>
