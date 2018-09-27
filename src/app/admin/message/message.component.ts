@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
+import firestore from 'firebase/firestore';
 
 @Component({
   selector: 'app-message',
@@ -8,8 +10,28 @@ import { Component, OnInit } from '@angular/core';
 export class MessageComponent implements OnInit {
 
   constructor() { }
+  messages=[];
+  openMessageBox:boolean = false;
 
   ngOnInit() {
+  	firebase.firestore().collection('messages').get().then(
+  		(docs)=>{
+  			docs.forEach(
+  				(doc)=>{
+  					this.messages.push(doc.data());
+  				}
+			)
+  		}
+	)
   }
+
+  composeMessage(){
+  	this.openMessageBox=true;
+  }
+
+  cancelComposeMessage(){
+  	this.openMessageBox=false;
+  }
+
 
 }

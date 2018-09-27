@@ -1,3 +1,37 @@
-<p>
-  message works!
-</p>
+<div class="card text-center mb-4" *ngFor="let message of messages">
+  	<div class="card-header">
+    	{{message.name}}
+  	</div>
+  	<div class="card-body">
+	  	<!--
+	    <h5 class="card-title"></h5>
+		-->
+    	<p class="card-text">{{message.message}}</p>
+    	<button (click)="composeMessage()" class="btn btn-outline-success">Reply</button>
+  	</div>
+  	<div class="card-footer text-muted">
+    	{{message.email}}
+  	</div>
+  	<div class="mx-3 mt-3 text-success" *ngIf="openMessageBox">
+		<form>
+			<div class="form-group">
+			    <label for="message">Your message</label>
+			    <textarea 
+			    	class="form-control" 
+			    	id="message" rows="7" 
+			    	cols="50"
+			    	placeholder="Write your message here" 
+			    	></textarea>
+			    	<div class="row">
+			    		<div class="col-xs-8 col-sm-8">
+			    			<button class="btn btn-outline-success btn-block my-4">Send</button>
+			    		</div>
+			    		<div class="col-xs-4 col-sm-4">
+			    			<button (click)="cancelComposeMessage()" class="btn btn-outline-danger btn-block my-4">Cancel</button>
+			    		</div>
+			    	</div>
+			    
+		  	</div>
+		</form>
+	</div>
+</div>
