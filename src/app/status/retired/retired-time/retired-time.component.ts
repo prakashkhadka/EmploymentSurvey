@@ -18,7 +18,6 @@ export class RetiredTimeComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.retiredTime){
   		this.router.navigate(['/retired/service-duration']);
   	}

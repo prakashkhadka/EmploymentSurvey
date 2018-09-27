@@ -18,7 +18,6 @@ export class BusinessDurationComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.businessDuration){
   		this.router.navigate(['/business/business-investment']);
   	}

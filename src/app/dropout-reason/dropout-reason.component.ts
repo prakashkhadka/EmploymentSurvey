@@ -18,7 +18,6 @@ export class DropoutReasonComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.dropoutReason){
   		this.router.navigate(['/highest-education']);
   	}

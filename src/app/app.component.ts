@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import * as firebase from 'firebase';
-
-import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +9,8 @@ import { AuthService } from './auth/auth.service';
 export class AppComponent {
   	title = 'app';
 
-  	constructor(private authService:AuthService){
+  	constructor(
+  		){
 
   	}
 
@@ -24,6 +23,6 @@ export class AppComponent {
 		    storageBucket: "emplymentsurvey.appspot.com",
 		    messagingSenderId: "513797163782"
 		});
-		this.authService.loginCheck();
+		
 	}
 }

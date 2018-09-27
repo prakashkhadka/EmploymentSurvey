@@ -18,7 +18,6 @@ export class LocationComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.location == "Overseas"){
   		this.router.navigate(['/country']);
   	}

@@ -33,7 +33,6 @@ export class NameComponent implements OnInit {
   }
   
   onSubmit(){
-    //console.log("onCourse");
     if(this.surveyService.firstname && this.surveyService.lastname || this.noName){
       this.router.navigate(['/email']);
     }
@@ -42,17 +41,8 @@ export class NameComponent implements OnInit {
     }
   }
 
-  goBack(){
-    this.location.back();
-  }
-  
-  /*
-  submit(){
-  	console.log("Submit Button clicked");
-  	this.surveyService.submit();
-  }
-  */
-
- 
+    goBack(){
+      this.location.back();
+    }
   }
 

@@ -18,7 +18,6 @@ export class FeIncomeComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.feIncome){
   		this.router.navigate(['/foreign-employment/workdays-number']);
   	}

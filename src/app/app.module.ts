@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NameComponent } from './name/name.component';
 import { HeaderComponent } from './header/header.component';
-import { RoutingModule } from './routing/routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { LocationComponent } from './location/location.component';
 
 import { SurveyService } from './survey.service';
@@ -29,10 +29,7 @@ import { FeIncomeComponent } from './status/foreign-employment/fe-income/fe-inco
 import { FeWorkdaysNumberComponent } from './status/foreign-employment/fe-workdays-number/fe-workdays-number.component';
 import { FeOvertimeComponent } from './status/foreign-employment/fe-overtime/fe-overtime.component';
 import { FeOvertimeHoursComponent } from './status/foreign-employment/fe-overtime-hours/fe-overtime-hours.component';
-import { LoginComponent } from './auth/login/login.component';
-import { AuthService } from './auth/auth.service';
-import { AdminEntryComponent } from './admin/admin-entry/admin-entry.component';
-import { AuthGuardService } from './auth/auth-guard.service';
+
 import { MessageService } from './contact-us/message.service';
 import { BusinessInheritanceComponent } from './status/business/business-inheritance/business-inheritance.component';
 import { BusinessDurationComponent } from './status/business/business-duration/business-duration.component';
@@ -70,6 +67,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PurposeComponent } from './purpose/purpose.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
+import { AdminModule } from './admin/admin.module';
+
 
 
 @NgModule({
@@ -97,8 +96,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FeWorkdaysNumberComponent,
     FeOvertimeComponent,
     FeOvertimeHoursComponent,
-    LoginComponent,
-    AdminEntryComponent,
     BusinessInheritanceComponent,
     BusinessDurationComponent,
     BusinessInvestmentComponent,
@@ -137,13 +134,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    RoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
   	SurveyService,
-  	AuthService,
-  	AuthGuardService,
   	MessageService
   ],
   bootstrap: [AppComponent]

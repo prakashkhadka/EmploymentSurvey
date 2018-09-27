@@ -18,7 +18,6 @@ export class HighestEducationComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.highestEducationLevel){
   		this.router.navigate(['/gender']);
   	}
@@ -28,7 +27,7 @@ export class HighestEducationComponent implements OnInit {
   }
 
   goBack(){
-  	this.location.back(); // <-- go back to previous location on cancel
+  	this.location.back();
   }
 
 }

@@ -18,7 +18,6 @@ export class JobOrganisationComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.organisationType){
   		this.router.navigate(['/job/job-level']);
   	}

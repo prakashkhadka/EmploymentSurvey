@@ -18,7 +18,6 @@ export class AfterStudyComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.afterStudy){
   		this.router.navigate(['/study/dream-job']);
   	}

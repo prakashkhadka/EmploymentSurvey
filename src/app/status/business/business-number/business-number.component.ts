@@ -13,8 +13,6 @@ export class BusinessNumberComponent implements OnInit {
 
   constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
 
-  
-  
   ngOnInit() {
   	
   }

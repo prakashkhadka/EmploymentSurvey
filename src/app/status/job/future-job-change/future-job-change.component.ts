@@ -18,7 +18,6 @@ export class FutureJobChangeComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.futureJobChange){
   		this.router.navigate(['/name']);
   	}

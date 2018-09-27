@@ -16,7 +16,7 @@ export class AuthService {
   login(email, password){
   	firebase.auth().signInWithEmailAndPassword(email, password).then(
   		(token) => {
-  			console.log("Successful login : " + token);
+  			//console.log("Successful login : " + token);
   			this.router.navigate(['/admin/admin-panel']);
   			return this.token = token;
   		}
@@ -34,7 +34,8 @@ export class AuthService {
   			if(user){
   				console.log("User is loggedin")
   				this.isAuthenticated = true;
-  				this.router.navigate(['/admin/admin-panel']);
+  				this.router.navigateByUrl('/admin/admin-panel');
+
   			}
   			else{
   				console.log("User is not logged in");
@@ -50,6 +51,7 @@ export class AuthService {
   	firebase.auth().signOut().then(
   		(response) => {
   			console.log("You are signed out");
+        this.router.navigate(['/']);
   		}
 	)
 	.catch(

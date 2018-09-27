@@ -18,7 +18,6 @@ export class HousewifeJobwishComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.housewifeWish){
   		this.router.navigate(['/name']);
   	}

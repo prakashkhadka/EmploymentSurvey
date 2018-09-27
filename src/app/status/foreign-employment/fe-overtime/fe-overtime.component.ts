@@ -18,7 +18,6 @@ export class FeOvertimeComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.feOvertime){
   		if(this.surveyService.feOvertime == 'Yes'){
   			this.router.navigate(['/foreign-employment/overtime-hours']);

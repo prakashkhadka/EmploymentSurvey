@@ -1,3 +1,20 @@
-<p>
-  admin-entry works!
-</p>
+<div class="mt-3">
+	<div class="container">
+		<h4 class="text-success font-weight-normal text-center mb-4">Employment Survey</h4>
+		<hr>
+		<div class="mt-6 mb-4">
+			<ul class="nav nav-tabs">
+			  <li class="nav-item">
+			    <button class="btn btn-outline-success mb-3"  routerLink="/admin/admin-panel">Dashboard</button>
+			  </li>
+			  <li class="nav-item ml-2">
+			    <button class="btn btn-outline-success mb-3" routerLinkActive="active" routerLink="message">Message</button>
+			  </li>
+			  <li class="nav-item ml-auto">
+			    <button class="btn btn-outline-danger ml-auto" *ngIf="authService.isAuthenticated" (click)="authService.logout()">Log Out</button>
+			  </li>
+			</ul>
+		</div>
+		<router-outlet></router-outlet>
+	</div>
+</div>

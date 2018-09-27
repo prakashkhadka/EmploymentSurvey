@@ -1,53 +1,68 @@
-<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid ">	
-	<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please enter country name <span *ngIf="isInvalid">to proceed</span></p>
-</div>
-<div class="row text-muted small justify-content-center" *ngIf="isInvalid && showGoBackMessage ">	
-	<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please fill up the form from beginning <span *ngIf="isInvalid">to proceed</span></p>
-</div>
-<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid && !showGoBackMessage">	
-	<p>Which country do you live now ?</p>
-</div>
-<form #f="ngForm">
-	<div>
-		<div class="row">
-		    <div class="form-group col-xs-12 col-sm-12">
-		      	<label for="country">Country</label>
-		      	<input 
-		      		type="text" 
-			      	class="form-control" 
-			      	id="country" 
-			      	placeholder="Country" 
-			      	name="Country"
-			      	[(ngModel)]="surveyService.country"
-			      	#country="ngModel"  
-			      	minlength="2"
-			      	maxlength="30" 
-			      	required 
-			      	[ngClass]="{ 'is-invalid': country.invalid && country.touched, 'is-valid': country.valid && country.touched }" 
-		      		>
-		      		<div *ngIf="country.invalid && country.touched" class="invalid-feedback">
-		      			<div *ngIf="country.errors.required">Please enter country name</div>
-                        <div *ngIf="country.errors.minlength">Minimum 2 characters</div>
-                        <div *ngIf="country.errors.maxlength">Maximum 30 characters</div>
-                    </div>
-                    <div *ngIf="isInvalid && country.pristine" class="c-invalid-feedback ml-1 mt-2">
-                        <div>Please enter country name</div>
-                    </div>
-                    <div *ngIf="isInvalid && showGoBackMessage" class="c-invalid-feedback ml-1 mt-2">
-                        <div>Please click <a href="/">here</a> fill up the form from beginning.</div>
-                    </div>
-		    </div>   
-	    </div>
-
-	    <hr>
-
-	    <div class="row text-center">
-			<div class="col xs-6">
-				<button class="btn btn-outline-success" (click)="goBack()">Back</button>
+<section id="signup-form" class="mt-3">
+  <div class="container">
+    <div class="row justify-content-sm-center">
+      <div class="col-sm-8 col-xs-12">
+        <h4 class="text-success font-weight-normal text-center">Employment Survey</h4>
+        <hr>
+        <p class="text-muted text-center">Please fill up the following form.</p>
+        <div class="card p-2 pt-0 mt-4 c-main-bg-color border-success">
+  			<div class="card-body text-success">
+			<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid ">	
+			<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please enter country name <span *ngIf="isInvalid">to proceed</span></p>
 			</div>
-			<div class="col xs-6">
-				<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
+			<div class="row text-muted small justify-content-center" *ngIf="isInvalid && showGoBackMessage ">	
+				<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please fill up the form from beginning <span *ngIf="isInvalid">to proceed</span></p>
 			</div>
-		</div>
+			<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid && !showGoBackMessage">	
+				<p>Which country do you live now ?</p>
+			</div>
+			<form #f="ngForm">
+				<div>
+					<div class="row">
+					    <div class="form-group col-xs-12 col-sm-12">
+					      	<label for="country">Country</label>
+					      	<input 
+					      		type="text" 
+						      	class="form-control" 
+						      	id="country" 
+						      	placeholder="Country" 
+						      	name="Country"
+						      	[(ngModel)]="surveyService.country"
+						      	#country="ngModel"  
+						      	minlength="2"
+						      	maxlength="30" 
+						      	required 
+						      	[ngClass]="{ 'is-invalid': country.invalid && country.touched, 'is-valid': country.valid && country.touched }" 
+					      		>
+					      		<div *ngIf="country.invalid && country.touched" class="invalid-feedback">
+					      			<div *ngIf="country.errors.required">Please enter country name</div>
+			                        <div *ngIf="country.errors.minlength">Minimum 2 characters</div>
+			                        <div *ngIf="country.errors.maxlength">Maximum 30 characters</div>
+			                    </div>
+			                    <div *ngIf="isInvalid && country.pristine" class="c-invalid-feedback ml-1 mt-2">
+			                        <div>Please enter country name</div>
+			                    </div>
+			                    <div *ngIf="isInvalid && showGoBackMessage" class="c-invalid-feedback ml-1 mt-2">
+			                        <div>Please click <a href="/">here</a> fill up the form from beginning.</div>
+			                    </div>
+					    </div>   
+				    </div>
+
+				    <hr>
+
+				    <div class="row text-center">
+						<div class="col xs-6">
+							<button class="btn btn-outline-success" (click)="goBack()">Back</button>
+						</div>
+						<div class="col xs-6">
+							<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
+						</div>
+					</div>
+			    </div>
+			</form>	
+          </div>
+        </div>
+      </div>
     </div>
-</form>				
+  </div>
+</section>			

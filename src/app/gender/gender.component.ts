@@ -19,7 +19,6 @@ export class GenderComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.gender){
   		this.router.navigate(['/location']);
   	}

@@ -19,7 +19,6 @@ export class YearJoinedComponent implements OnInit {
   isInvalid:boolean = false;
   invalidDate:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.year > 2045 && this.surveyService.year < 2076){
   		this.router.navigate(['/course-completed']);
   		this.isInvalid = false;
@@ -35,11 +34,6 @@ export class YearJoinedComponent implements OnInit {
   }
 
   goBack() {
-    this.location.back(); // <-- go back to previous location on cancel
+    this.location.back();
   }
-
-
-
-  //years:[number] = [2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058];
-
 }

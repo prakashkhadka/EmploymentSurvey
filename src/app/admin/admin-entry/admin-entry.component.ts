@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../auth/auth.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-admin-entry',
@@ -12,6 +12,7 @@ export class AdminEntryComponent implements OnInit {
 
   ngOnInit() {
   	this.authService.loginCheck();
+  	console.log("Admin Section envoked");
   }
 
 }

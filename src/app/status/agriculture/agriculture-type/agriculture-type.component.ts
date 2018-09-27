@@ -18,7 +18,6 @@ export class AgricultureTypeComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.agricultureType){
   		this.router.navigate(['/agriculture/agriculture-income']);
   	}

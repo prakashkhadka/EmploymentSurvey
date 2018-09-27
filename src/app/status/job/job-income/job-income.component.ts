@@ -18,7 +18,6 @@ export class JobIncomeComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.jobIncome){
   		this.router.navigate(['/job/job-other-activities']);
   	}

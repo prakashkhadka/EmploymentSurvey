@@ -18,7 +18,6 @@ export class BusinessInheritanceComponent implements OnInit {
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.businessInheritance){
   		this.router.navigate(['/business/business-duration']);
   	}

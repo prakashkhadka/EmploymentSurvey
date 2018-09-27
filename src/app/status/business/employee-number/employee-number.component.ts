@@ -14,12 +14,10 @@ export class EmployeeNumberComponent implements OnInit {
   constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
 
   ngOnInit() {
-  	//console.log("Business type is: " + this.surveyService.surveyData.BusinessType);
   }
 
   isInvalid:boolean = false;
   onSubmit(){
-  	//console.log("onCourse");
   	if(this.surveyService.employeeNumber){
   		this.router.navigate(['/business/business-inheritance']);
   	}
