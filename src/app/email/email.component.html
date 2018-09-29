@@ -47,7 +47,7 @@
 									[(ngModel)]="surveyService.consent"
 									[ngModelOptions]="{standalone: true}"
 							    	required>
-							    <label class="custom-control-label" for="group-2" [ngClass]="{'text-danger': isInvalid && !surveyService.consent}">I agree with Terms & Conditions</label>
+							    <label class="custom-control-label" for="group-2" [ngClass]="{'text-danger': isInvalid && !surveyService.consent}">I agree with <a routerLink="/terms-conditions">Terms & Conditions</a></label>
 							    <div class="invalid-feedback">Example invalid feedback text</div>
 							  </div>
 				    	</div>

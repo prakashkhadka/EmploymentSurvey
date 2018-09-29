@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import * as firebase from 'firebase';
 import firestore from 'firebase/firestore';
 

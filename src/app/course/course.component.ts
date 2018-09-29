@@ -18,7 +18,6 @@ export class CourseComponent implements OnInit {
   }
   isInvalid:boolean = false;
   onSubmit(){
-  	console.log("onCourse");
   	if(this.surveyService.level){
   		this.router.navigate(['/year-joined']);
   	}

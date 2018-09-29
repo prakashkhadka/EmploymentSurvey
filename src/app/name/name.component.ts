@@ -20,9 +20,6 @@ export class NameComponent implements OnInit {
   }
 
   resetName(){
-    console.log("reset name");
-    //this.surveyService.firstname = null;
-    //this.surveyService.lastname = null;
     if(this.noName){
         this.surveyService.firstname = null;
         this.surveyService.lastname = null;

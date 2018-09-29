@@ -14,7 +14,6 @@ export class GenderComponent implements OnInit {
   constructor(private surveyService: SurveyService, private location:Location, private router:Router) { }
 
   ngOnInit() {
-  	console.log(this.surveyService.surveyData);
   }
 
   isInvalid:boolean = false;
