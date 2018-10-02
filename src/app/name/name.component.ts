@@ -11,23 +11,27 @@ import { Router } from '@angular/router';
 })
 export class NameComponent implements OnInit {
 
-  constructor( private surveyService: SurveyService, private location:Location, private router:Router) { }
+  constructor(public surveyService: SurveyService, private location:Location, private router:Router) { }
   
   noName:string;
   isInvalid:boolean = false;
 
   ngOnInit() {
+    if(this.surveyService.firstname == '' && this.surveyService.lastname == ''){
+      this.noName = "noName";
+    }
   }
 
   resetName(){
     if(this.noName){
-        this.surveyService.firstname = null;
-        this.surveyService.lastname = null;
+        this.surveyService.firstname = '';
+        this.surveyService.lastname = '';
     }
     else{
 
     }
   }
+
   
   onSubmit(){
     if(this.surveyService.firstname && this.surveyService.lastname || this.noName){

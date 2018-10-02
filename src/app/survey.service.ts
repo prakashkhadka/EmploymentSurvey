@@ -5,15 +5,11 @@ import * as firebase from 'firebase';
 import 'firebase/firestore';
 
 
-//import { Subject } from 'rxjs/Subject';
-
 @Injectable({
   providedIn: 'root'
 })
 export class SurveyService {
-	constructor(private router:Router){
-
-	}
+	constructor(private router:Router){}
   
   firstname:string;
   lastname:string;
@@ -58,22 +54,39 @@ export class SurveyService {
   email:string;
   consent:string;
 
-
-
   ngOnInit(){
   	
   }
+  storeToDatabase(data){
+    firebase.firestore().collection('survey').add(data).then(
+      ()=>{
+        this.router.navigate(['/thank-you']);
+      }
+    )
+    .catch(
+      (error)=>{
+        //console.log("Something went wrong: " + error.message);
+      }
+    )
+  }
+ 
 
   submit(){
+     let surveyData;
+      
       if(this.completed == 'Yes'){
           this.dropoutReason = null;
       }
       if(this.feOvertime == 'No'){
         this.feOvertimeHours=null;
       }
-      
+      if(this.location == "Overseas" && this.overseasPurpose == "Work"){
+        this.employmentStatus == "Foreign Employment";
+      }
 
-      let surveyData = {}
+      if(!this.level || !this.year || !this.completed || !this.highestEducationLevel || !this.gender || !this.location || !this.consent){
+        this.router.navigate(['/']);
+      }
 
       if(this.employmentStatus == 'Job'){
         surveyData = {
@@ -86,6 +99,8 @@ export class SurveyService {
           location:this.location,
           employmentStatus:this.employmentStatus,
           email:this.email,
+          firstname:this.firstname,
+          lastname:this.lastname,
           consent:this.consent,
           jobType:this.jobType,
           organisationType:this.organisationType,
@@ -96,6 +111,7 @@ export class SurveyService {
           pastJobChange:this.pastJobChange,
           futureJobChange:this.futureJobChange
         }
+        this.storeToDatabase(surveyData);
       }
         else if(this.employmentStatus == 'Business'){
           surveyData = {
@@ -108,6 +124,8 @@ export class SurveyService {
             location:this.location,
             employmentStatus:this.employmentStatus,
             email:this.email,
+            firstname:this.firstname,
+            lastname:this.lastname,
             consent:this.consent,
             businessType:this.businessType,
             employeeNumber:this.employeeNumber,
@@ -116,6 +134,7 @@ export class SurveyService {
             businessInvestment:this.businessInvestment,
             businessNumber:this.businessNumber
           }
+          this.storeToDatabase(surveyData);
         }
         else if(this.employmentStatus == 'Foreign Employment'){
           surveyData = {
@@ -128,6 +147,8 @@ export class SurveyService {
             location:this.location,
             employmentStatus:this.employmentStatus,
             email:this.email,
+            firstname:this.firstname,
+            lastname:this.lastname,
             consent:this.consent,
             country:this.country,
             foreignEmploymentDuration:this.feDuration,
@@ -136,6 +157,7 @@ export class SurveyService {
             foreignEmploymentOvertime:this.feOvertime,
             foreignEmploymentFurtherStay:this.feFurtherStay
           }
+          this.storeToDatabase(surveyData);
         }
         else if(this.employmentStatus == 'Study'){
           surveyData = {
@@ -148,10 +170,13 @@ export class SurveyService {
             location:this.location,
             employmentStatus:this.employmentStatus,
             email:this.email,
+            firstname:this.firstname,
+            lastname:this.lastname,
             consent:this.consent,
             afterStudy:this.afterStudy,
             dreamJob:this.dreamJob
           }
+          this.storeToDatabase(surveyData);
         }
         else if(this.employmentStatus == 'Housewife'){
           surveyData = {
@@ -164,9 +189,12 @@ export class SurveyService {
             location:this.location,
             employmentStatus:this.employmentStatus,
             email:this.email,
+            firstname:this.firstname,
+            lastname:this.lastname,
             consent:this.consent,
             houseWifeJobWish:this.housewifeWish
           }
+          this.storeToDatabase(surveyData);
         }
         else if(this.employmentStatus == 'Agriculture'){
           surveyData = {
@@ -179,10 +207,13 @@ export class SurveyService {
             location:this.location,
             employmentStatus:this.employmentStatus,
             email:this.email,
+            firstname:this.firstname,
+            lastname:this.lastname,
             consent:this.consent,
             agricultureType:this.agricultureType,
             agricultureIncome:this.agricultureIncome
           }
+          this.storeToDatabase(surveyData);
         }
         else if(this.employmentStatus == 'Retired'){
           surveyData = {
@@ -195,13 +226,17 @@ export class SurveyService {
             location:this.location,
             employmentStatus:this.employmentStatus,
             email:this.email,
+            firstname:this.firstname,
+            lastname:this.lastname,
             consent:this.consent,
             retirementTime:this.retiredTime,
             servieDuration:this.serviceDuration,
             pension:this.pension,
           }
+          this.storeToDatabase(surveyData);
         }
         else{
+          console.log("else called");
           surveyData={
             level:this.level,
             year:this.year,
@@ -212,48 +247,12 @@ export class SurveyService {
             location:this.location,
             employmentStatus:this.employmentStatus,
             email:this.email,
+            firstname:this.firstname,
+            lastname:this.lastname,
             consent:this.consent,
           }
+          this.storeToDatabase(surveyData);
         }
-      
-        console.log("Data is : " + surveyData)
-      firebase.firestore().collection('survey').add(surveyData).then(
-        ()=>{
-          this.router.navigate(['/thank-you']);
-        }
-      )
-      .catch(
-        (error)=>{
-          console.log("Something went wrong: " + error.message);
-        }
-      )
     }
-
-
     
-      
-  	//this.router.navigate(['/thank-you']);
-	/*
-  	let name = {
-  		firstName: this.firstname,
-  		lastName: this.lastname,
-  		year:this.year
-  	}
-  	firebase.firestore().collection('survey').add(name).then(
-  		() => {
-  			console.log("Successfully added")
-  		}
-	)
-	.catch(
-		() => {
-			console.log("Something went wrong. Please try again");
-		}
-	)
-	*/
-  
-
-
-
-
-
 }

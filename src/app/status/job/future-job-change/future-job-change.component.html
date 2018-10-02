@@ -1,48 +1,46 @@
-<p class="lead text-center">Do you want to change your current job in next 2 years ?</p>
-<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid">	
-	<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
+<p class="lead text-info text-center mb-1">Do you want to change job in next 2 years ?</p>
+<div class="row justify-content-center" *ngIf="isInvalid && f.invalid">  
+      <p [ngClass]="{'text-danger small border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
 </div>
-<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
-	<p>Please select one</p>
+<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">
+      <p class="mb-1">Please select one</p>
 </div>
 <form #f="ngForm">
-	<div>
-		<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-      		<input 
-      			id="yes" 
-      			type="radio" 
-      			class="btn btn-outline-primary custom-control-input" 
-      			value="Yes" 
-      			name="futureJobChange" 
-      			[(ngModel)]="surveyService.futureJobChange"
-      			required
-	      		>
-      		<label class="custom-control-label pl-2 ml-3" for="yes">Yes</label>
-      	</div>
-      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-      		<input 
-      			id="no" 
-      			type="radio" 
-      			class="btn btn-outline-primary custom-control-input" 
-      			value="No" 
-      			name="futureJobChange" 
-      			[(ngModel)]="surveyService.futureJobChange"
-      			required
-	      		>
-      		<label class="custom-control-label pl-2 ml-3" for="no">No</label>
-      	</div>
-      	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
-      		<input 
-      			id="no" 
-      			type="radio" 
-      			class="btn btn-outline-primary custom-control-input" 
-      			value="No" 
-      			name="futureJobChange" 
-      			[(ngModel)]="surveyService.futureJobChange"
-      			required
-	      		>
-      		<label class="custom-control-label pl-2 ml-3" for="no">Not sure</label>
-      	</div>
+	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+		<input 
+			id="yes" 
+			type="radio" 
+			class="btn btn-outline-primary custom-control-input" 
+			value="Yes" 
+			name="futureJobChange" 
+			[(ngModel)]="surveyService.futureJobChange"
+			required
+      		>
+		<label class="custom-control-label pl-2 ml-3" for="yes">Yes</label>
+	</div>
+	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+		<input 
+			id="no" 
+			type="radio" 
+			class="btn btn-outline-primary custom-control-input" 
+			value="No" 
+			name="futureJobChange" 
+			[(ngModel)]="surveyService.futureJobChange"
+			required
+      		>
+		<label class="custom-control-label pl-2 ml-3" for="no">No</label>
+	</div>
+	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+		<input 
+			id="notsure" 
+			type="radio" 
+			class="btn btn-outline-primary custom-control-input" 
+			value="Not sure" 
+			name="futureJobChange" 
+			[(ngModel)]="surveyService.futureJobChange"
+			required
+      		>
+		<label class="custom-control-label pl-2 ml-3" for="notsure">Not sure</label>
 	</div>
 
 	<hr>

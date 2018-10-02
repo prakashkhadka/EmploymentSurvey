@@ -12,7 +12,7 @@ export class AuthService {
 
   token;
   isAuthenticated:boolean = false;
-
+  loginError:boolean = false;
   login(email, password){
   	firebase.auth().signInWithEmailAndPassword(email, password).then(
   		(token) => {
@@ -56,6 +56,7 @@ export class AuthService {
 	)
 	.catch(
 		(error) => {
+      this.loginError = true;
 			console.log("Something went wrong with Sign Out : " + error.message);
 		}
 	)

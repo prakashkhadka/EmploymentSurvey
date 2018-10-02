@@ -14,7 +14,6 @@ export class MessageService {
   sendMessage(message){
   	firebase.firestore().collection('messages').add(message).then(
   		(response)=>{
-  			//console.log("Message successfully saved : " + response);
   			this.messageSuccess = true;
   		}
 	)

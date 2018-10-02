@@ -1,12 +1,13 @@
-<p class="lead text-center">Do you get pension ? ( पेन्सन पाउनुहुन्छ ? )</p>
-<div class="row text-muted small justify-content-center" *ngIf="isInvalid && f.invalid">	
-	<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
+<p class="lead text-info text-center">Do you get pension ?</p>
+<p class="text-info small text-center mb-1">( पेन्सन पाउनुहुन्छ ? )</p>
+<div class="row justify-content-center" *ngIf="isInvalid && f.invalid">  
+      <p [ngClass]="{'text-danger small border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
 </div>
-<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
-	<p>Please select one</p>
+<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">
+      <p class="mb-1">Please select one</p>
 </div>
 <form #f="ngForm">
-	<div class="row text-center mt-3">
+	<div class="row text-center mt-1">
 		<div class="col custom-control custom-radio mt-2">
       		<input 
       			id="yes" 

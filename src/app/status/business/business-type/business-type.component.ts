@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class BusinessTypeComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location:Location, private router:Router ) { }
+  constructor(public surveyService:SurveyService, private location:Location, private router:Router ) { }
 
   ngOnInit() {
   	if(this.surveyService.businessType && this.surveyService.businessType != 'Production' && this.surveyService.businessType != 'Retail' && this.surveyService.businessType != 'Service'){

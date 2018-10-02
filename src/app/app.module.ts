@@ -70,6 +70,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AdminModule } from './admin/admin.module';
 
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -139,7 +141,8 @@ import { AdminModule } from './admin/admin.module';
   ],
   providers: [
   	SurveyService,
-  	MessageService
+  	MessageService,
+    {provide:LocationStrategy, useClass:HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

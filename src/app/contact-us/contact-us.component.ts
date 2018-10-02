@@ -10,7 +10,7 @@ import { MessageService } from './message.service';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor(private messageService:MessageService) { }
+  constructor(public messageService:MessageService) { }
 
   ngOnInit() {
   }

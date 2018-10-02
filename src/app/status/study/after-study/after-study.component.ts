@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AfterStudyComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
+  constructor(public surveyService:SurveyService, private location:Location, private router:Router) { }
 
   ngOnInit() {
   }

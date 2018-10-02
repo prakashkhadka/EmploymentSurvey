@@ -43,7 +43,7 @@
 						      	ngModel 
 						      	#password="ngModel"
 						      	required
-						      	[ngClass]="{ 'is-invalid': password.invalid && password.touched || showError, 'is-valid': password.valid && password.touched }" 
+						      	[ngClass]="{ 'is-invalid': password.invalid && password.touched, 'is-valid': password.valid && password.touched }" 
 					      		>
 					      		<div *ngIf="password.invalid && password.touched" class="invalid-feedback">
 			                        <div *ngIf="password.errors.required">Please enter password</div>
@@ -56,7 +56,7 @@
 			    </div>
 
 			  	<hr>
-			  	<button [disabled]="f.invalid || confirmPasswordInvalid" type="submit" class="btn btn-outline-success btn-block">Sign In</button>
+			  	<button [disabled]="f.invalid" type="submit" class="btn btn-outline-success btn-block">Sign In</button>
 
 				<hr>
 				<div class="row text-center">
