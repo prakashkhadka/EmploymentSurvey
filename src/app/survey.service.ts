@@ -57,7 +57,9 @@ export class SurveyService {
   ngOnInit(){
   	
   }
+  dataSent:boolean = false;
   storeToDatabase(data){
+  this.dataSent = true;
     firebase.firestore().collection('survey').add(data).then(
       ()=>{
         this.router.navigate(['/thank-you']);

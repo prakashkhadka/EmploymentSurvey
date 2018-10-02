@@ -6968,6 +6968,27 @@ button[disabled] {
   margin-left: 0px;
 }
 
+.loader {
+  border: 6px solid #f3f3f3;
+  /* Light grey */
+  border-top: 6px solid #9000ad;
+  /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 footer {
   min-height: 100px;
   background-color: #FBF7FD;

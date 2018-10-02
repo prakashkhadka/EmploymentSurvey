@@ -11,7 +11,7 @@ import { SurveyService } from '../survey.service';
 })
 export class EmailComponent implements OnInit {
 
-  constructor(private surveyService:SurveyService, private location:Location, private router:Router) { }
+  constructor(public surveyService:SurveyService, private location:Location, private router:Router) { }
 
   isInvalid:boolean = false;
 

@@ -29,9 +29,9 @@
 						      	[(ngModel)]="surveyService.email"
 						      	#email="ngModel" 
 						      	pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
-						      	[ngClass]="{ 'is-invalid': email.invalid && email.touched && !noEmail, 'is-valid': email.valid && email.touched }" 
+						      	[ngClass]="{ 'is-invalid': email.invalid && email.touched, 'is-valid': email.valid && email.touched }" 
 					      		>
-					      		<div *ngIf="email.invalid && email.touched && !noEmail" class="invalid-feedback">
+					      		<div *ngIf="email.invalid && email.touched" class="invalid-feedback">
 					      			<div *ngIf="email.errors.required">Please enter email name</div>
 					      			<div *ngIf="email.errors.pattern">Please enter a valid email address</div>
 			                    </div>
@@ -67,6 +67,11 @@
 					</div>
 			    </div>
 			</form>
+			<div *ngIf="surveyService.dataSent">
+				<div class="loader"></div>
+				<p class="text-success lead text-center mt-2">Please wait</p>
+			</div>
+			
           </div>
         </div>
       </div>

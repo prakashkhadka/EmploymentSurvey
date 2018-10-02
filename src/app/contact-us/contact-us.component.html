@@ -79,6 +79,10 @@
 					  	</div>
 					  	<button type="submit" [disabled]="f.invalid" class="btn btn-outline-success btn-block">Send</button>
 					</form>
+					<div class="mt-4" *ngIf="messageService.messageSent && !messageService.messageSuccess">
+						<div class="loader"></div>
+						<p class="text-success lead text-center mt-2">Please wait</p>
+					</div>
 					<div *ngIf="messageService.messageSuccess" class="text-center">
 						<h3>Thank you</h3>
 						<p>We have received your message. We will be in touch with you very soon.</p>
