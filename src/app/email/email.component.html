@@ -1,17 +1,19 @@
-<section id="signup-form" class="mt-3">
+<section>
   <div class="container">
     <div class="row justify-content-sm-center">
       <div class="col-sm-8 col-xs-12">
-        <h4 class="text-success font-weight-normal text-center">Employment Survey</h4>
+        <h6 class="text-success font-weight-normal text-center">Employment Survey</h6>
         <hr>
-        <p class="text-muted text-center">Please fill up the following form.</p>
-        <div class="card p-2 pt-0 mt-4 c-main-bg-color border-success">
+        <div class="card c-main-bg-color border-info">
           <div class="card-body text-success">
+          	<p class="lead text-info text-center mb-1">Your email address ?</p>
+          	<p class="text-info text-center small mb-1">( तपाइको इमेल एड्रेस ?)</p>
 			<div class="row text-muted small justify-content-center" *ngIf="email.dirty && email.invalid || isInvalid && !surveyService.consent">	
 				<p  [ngClass]="{'text-danger font-weight-normal border border-danger rounded p-2 guide blink': isInvalid}"><span *ngIf="!surveyService.consent ">Please provide your consent </span><span *ngIf="!surveyService.consent && email.invalid"> & </span> <span *ngIf="email.invalid"> Enter valid email address </span> <span *ngIf="isInvalid">to proceed</span></p>
 			</div>
 			<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">	
 				<p>Please enter email address. You can submit without entering email address.</p>
+				<p class="text-info text-center">( इमेल एड्रेस नराखेर पनि फर्म सब्मिट गर्न सक्नुहुन्छ । तर इमेल एड्रेस भर्दा राम्रो । )</p>
 			</div>
 			<form #f="ngForm">
 				<div>
@@ -47,7 +49,7 @@
 									[(ngModel)]="surveyService.consent"
 									[ngModelOptions]="{standalone: true}"
 							    	required>
-							    <label class="custom-control-label" for="group-2" [ngClass]="{'text-danger': isInvalid && !surveyService.consent}">I agree with <a routerLink="/terms-conditions">Terms & Conditions</a></label>
+							    <label class="custom-control-label" for="group-2" [ngClass]="{'text-danger': isInvalid && !surveyService.consent}">I agree with <a routerLink="/terms-conditions">Terms & Conditions</a> and <a routerLink="/privacy-policy">Privacy Policy</a></label>
 							    <div class="invalid-feedback">Example invalid feedback text</div>
 							  </div>
 				    	</div>

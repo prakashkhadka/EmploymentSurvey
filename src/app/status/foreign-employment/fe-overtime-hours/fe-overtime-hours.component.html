@@ -1,4 +1,5 @@
 <p class="lead text-info text-center mb-1">How many overtime hours do you work in a week ?</p>
+<p class="small text-info text-center mb-1">( हप्तामा कति घण्टा ओभरटाइम काम गर्नुहुन्छ? )</p>
 <div class="row justify-content-center" *ngIf="isInvalid && f.invalid">  
       <p [ngClass]="{'text-danger small border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
 </div>
@@ -17,7 +18,7 @@
       			[(ngModel)]="surveyService.feOvertimeHours"
       			required 
 	      		>
-      		<label class="custom-control-label pl-2 ml-3" for="group-1"> 5-10 hours a week</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-1"> 5-10 hours</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
       		<input 
@@ -29,7 +30,7 @@
       			[(ngModel)]="surveyService.feOvertimeHours"
       			required
 	      		>
-      		<label class="custom-control-label pl-2 ml-3" for="group-2">10-15 hours a week</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-2">10-15 hours</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
       		<input 
@@ -41,7 +42,7 @@
       			[(ngModel)]="surveyService.feOvertimeHours"
       			required
 	      		>
-      		<label class="custom-control-label pl-2 ml-3" for="group-3">15-20 hours a week</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-3">15-20 hours</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
       		<input 
@@ -53,7 +54,7 @@
       			[(ngModel)]="surveyService.feOvertimeHours"
       			required
 	      		>
-      		<label class="custom-control-label pl-2 ml-3" for="group-4">20-25 hours a week</label>
+      		<label class="custom-control-label pl-2 ml-3" for="group-4">20-25 hours</label>
       	</div>
       	<div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
       		<input 
