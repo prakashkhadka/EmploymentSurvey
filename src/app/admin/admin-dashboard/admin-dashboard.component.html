@@ -1,3 +1,134 @@
-<p>
-  admin-dashboard works!
-</p>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-xs-12">
+				<p><span class="text-success">Respondants : </span>{{surveyMainDataService.respondantsNumber}}</p>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<p><span class="text-success">Living in Nepal : </span>{{respondantLocationService.livingInNepal}}</p>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<p><span class="text-success">Living Overseas : </span>{{respondantLocationService.livingOverseas}}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 col-xs-12">
+				<p><span class="text-success">Completed course : </span>{{surveyMainDataService.successfullyCompleted}}</p>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<p><span class="text-success">Who didn't complete : </span>{{surveyMainDataService.notCompletedCourse}}</p>
+			</div>
+		</div>
+		<hr>
+
+		<div class="row">
+			<div class="container">
+				<div class="mt-6 mb-4">
+					<ul class="nav nav-tabs justify-content-center">
+					  <li class="nav-item">
+					    <button class="btn btn-outline-info mb-3" (click)="showPieChart()" >Pie Chart</button>
+					  </li>
+					  <li class="nav-item ml-2">
+					    <button class="btn btn-outline-info mb-3" (click)="showBarChart()" >Bar Chart</button>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" *ngIf="pieChart">
+			<div class="col-xs-12 col-sm-12">
+				<h4 class="text-success text-center">Reason of not completing course</h4>
+				
+				<!--
+				<ngx-charts-pie-chart
+			      [view]="view"
+			      [scheme]="colorScheme"
+			      [results]="myData"
+			      [legendTitle]="lTitle"
+			      [legend]="showLegend"
+			      [explodeSlices]="explodeSlices"
+			      [labels]="showLabels"
+			      [doughnut]="doughnut"
+			      [maxLabelLength]=40
+			      >
+			    </ngx-charts-pie-chart>
+				-->
+				
+				<ngx-charts-pie-chart
+			      [scheme]="colorScheme"
+			      [results]="dropoutData"
+			      [explodeSlices]="explodeSlices"
+			      [labels]="showLabels"
+			      [doughnut]="doughnut"
+			      [maxLabelLength]=40
+			      >
+			    </ngx-charts-pie-chart>
+				
+			</div>
+		</div>
+		<hr>
+
+		<div class="row" *ngIf="pieChart">
+			<div class="col-xs-12 col-sm-12">
+				<h4 class="text-success text-center">Where Ex-students are living now</h4>
+				
+				<ngx-charts-pie-chart
+			      [scheme]="colorScheme"
+			      [results]="respondantLocation"
+			      [explodeSlices]="explodeSlices"
+			      [labels]="showLabels"
+			      [doughnut]="doughnut"
+			      [maxLabelLength]=40
+			      >
+			    </ngx-charts-pie-chart>
+				
+			</div>
+		</div>
+		<hr>
+
+		<div class="row" *ngIf="pieChart">
+			<div class="col-xs-12 col-sm-12">
+				<h4 class="text-success text-center">Employment situation</h4>
+				
+				<ngx-charts-pie-chart
+			      [scheme]="colorScheme"
+			      [results]="jobSituation"
+			      [explodeSlices]="explodeSlices"
+			      [labels]="showLabels"
+			      [doughnut]="doughnut"
+			      [maxLabelLength]=40
+			      >
+			    </ngx-charts-pie-chart>
+				
+			</div>
+		</div>
+		
+		<hr>
+		<div class="row" *ngIf="barChart">
+			<div class="col-xs-12 col-sm-12">
+				<h4 class="text-success text-center">Employment situation</h4>
+				
+				<ngx-charts-bar-vertical
+				  [view]="view"
+				  [scheme]="colorScheme"
+				  [results]="jobSituation"
+				  [gradient]="gradient"
+				  [xAxis]="showXAxis"
+				  [yAxis]="showYAxis"
+				  [legendTitle]="legendTitle"
+				  [legend]="showLegend"
+				  [showXAxisLabel]="showXAxisLabel"
+				  [showYAxisLabel]="showYAxisLabel"
+				  [xAxisLabel]="xAxisLabel"
+				  [yAxisLabel]="yAxisLabel"
+				  (select)="onSelect($event)">
+				</ngx-charts-bar-vertical>
+				
+			</div>
+		</div>
+	</div>
+	
+</section>
+

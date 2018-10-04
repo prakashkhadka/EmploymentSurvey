@@ -13,13 +13,14 @@ export class MessageComponent implements OnInit {
   constructor() { }
   messages=[];
   openMessageBox:boolean = false;
-
+  showWaitSpinner:boolean = true;
   ngOnInit() {
   	firebase.firestore().collection('messages').get().then(
   		(docs)=>{
   			docs.forEach(
   				(doc)=>{
   					this.messages.push(doc.data());
+  					this.showWaitSpinner = false;
   				}
 			)
   		}
@@ -34,5 +35,8 @@ export class MessageComponent implements OnInit {
   	this.openMessageBox=false;
   }
 
+  seneMessage(form:NgForm){
+  	
+  }
 
 }

@@ -10,12 +10,18 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { MessageComponent } from './message/message.component';
 
 const routes: Routes = [
+	{path:'',component:AdminEntryComponent, children:[
+		{path:'', component:AdminDashboardComponent},
+		{path:'message', component:MessageComponent}
+	]},
+	/*
 	{path:'', component:LoginComponent},
 	{path:'admin-panel',pathMatch:'prefix',canActivate:[AuthGuardService],component:AdminEntryComponent, children:[
 		{path:'', component:AdminDashboardComponent},
 		{path:'message', component:MessageComponent}
 	]},
-	//{path:'admin-panel',component:AdminEntryComponent}
+	*/
+	
 	
 ];
 

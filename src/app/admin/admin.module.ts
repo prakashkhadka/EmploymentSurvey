@@ -12,11 +12,23 @@ import { AdminEntryComponent } from './admin-entry/admin-entry.component';
 import { MessageComponent } from './message/message.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
+
+
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+
+import { SurveyMainDataService } from '../admin/admin-dashboard/survey-main-data.service';
+import { DropoutReasonService } from '../admin/admin-dashboard/dropout-reason.service';
+import { RespondantLocationService } from '../admin/admin-dashboard/respondant-location.service';
+
+
+
+
 @NgModule({
   imports: [
     CommonModule,
     AdminRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxChartsModule
   ],
   declarations: [
   	LoginComponent,
@@ -26,7 +38,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
   ],
   providers: [
   	AuthService,
-  	AuthGuardService
+  	AuthGuardService,
+    SurveyMainDataService,
+    DropoutReasonService,
+    RespondantLocationService
   ]
 })
 export class AdminModule { }

@@ -1,3 +1,7 @@
+<div *ngIf="showWaitSpinner">
+	<div class="loader"></div>
+	<p class="text-success lead text-center mt-2">Please wait</p>
+</div>
 <div class="card text-center mb-4" *ngFor="let message of messages">
   	<div class="card-header">
     	{{message.name}}
