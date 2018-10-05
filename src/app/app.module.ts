@@ -75,6 +75,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
+ import { NguiAutoCompleteModule } from '@ngui/auto-complete';
+
+
 
 @NgModule({
   declarations: [
@@ -142,6 +145,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    NguiAutoCompleteModule
   ],
   providers: [
   	SurveyService,

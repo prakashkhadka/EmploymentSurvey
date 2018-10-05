@@ -32,5 +32,4 @@ export class LocationComponent implements OnInit {
   goBack(){
   	this.location.back();
   }
-
 }

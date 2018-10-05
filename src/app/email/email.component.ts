@@ -16,6 +16,7 @@ export class EmailComponent implements OnInit {
   isInvalid:boolean = false;
 
   ngOnInit() {
+    this.surveyService.dataSent = false;
   }
 
   onSubmit(){

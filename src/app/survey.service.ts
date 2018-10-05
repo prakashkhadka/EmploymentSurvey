@@ -58,22 +58,66 @@ export class SurveyService {
   	
   }
   dataSent:boolean = false;
+
   storeToDatabase(data){
+    console.log("Database called");
   this.dataSent = true;
     firebase.firestore().collection('survey').add(data).then(
       ()=>{
         this.router.navigate(['/thank-you']);
+        this.firstname='';
+        this.lastname='';
+        this.year=null;
+        this.level='';
+        this.completed='';
+        this.highestEducationLevel='';
+        this.gender='';
+        this.employmentStatus='';
+        this.country='';
+        this.location='';
+        this.dropoutReason='';
+        this.businessType='';
+        this.employeeNumber='';
+        this.businessInheritance='';
+        this.businessDuration='';
+        this.businessInvestment='';
+        this.businessNumber='';
+        this.jobLevel='';
+        this.jobType='';
+        this.organisationType='';
+        this.jobIncome='';
+        this.jobOtherActivites='';
+        this.jobSatisfactionLevel='';
+        this.pastJobChange='';
+        this.futureJobChange='';
+        this.overseasPurpose='';
+        this.feDuration='';
+        this.feIncome='';
+        this.feWorkDayNumber='';
+        this.feOvertime='';
+        this.feOvertimeHours='';
+        this.feFurtherStay='';
+        this.agricultureType='';
+        this.agricultureIncome='';
+        this.afterStudy='';
+        this.dreamJob='';
+        this.retiredTime='';
+        this.serviceDuration='';
+        this.pension='';
+        this.housewifeWish='';
+        this.email='';
+        this.consent='';
       }
     )
     .catch(
       (error)=>{
-        //console.log("Something went wrong: " + error.message);
       }
     )
   }
  
 
   submit(){
+    console.log("Submit called");
      let surveyData;
       
       if(this.completed == 'Yes'){
@@ -85,6 +129,7 @@ export class SurveyService {
       if(this.location == "Overseas" && this.overseasPurpose == "Work"){
         this.employmentStatus == "Foreign Employment";
       }
+      
 
       if(!this.level || !this.year || !this.completed || !this.highestEducationLevel || !this.gender || !this.location || !this.consent){
         this.router.navigate(['/']);
@@ -237,8 +282,24 @@ export class SurveyService {
           }
           this.storeToDatabase(surveyData);
         }
-        else{
-          console.log("else called");
+        else if(this.employmentStatus == 'Unemployed'){
+          surveyData = {
+            level:this.level,
+            year:this.year,
+            completed:this.completed,
+            dropoutReason:this.dropoutReason,
+            highestEducationLevel:this.highestEducationLevel,
+            gender:this.gender,
+            location:this.location,
+            employmentStatus:"Unemployed",
+            email:this.email,
+            firstname:this.firstname,
+            lastname:this.lastname,
+            consent:this.consent
+          }
+          this.storeToDatabase(surveyData);
+        }
+        else if(this.location == "Overseas" && this.overseasPurpose == "NRN"){
           surveyData={
             level:this.level,
             year:this.year,
@@ -247,7 +308,24 @@ export class SurveyService {
             highestEducationLevel:this.highestEducationLevel,
             gender:this.gender,
             location:this.location,
-            employmentStatus:this.employmentStatus,
+            employmentStatus:"NRN",
+            email:this.email,
+            firstname:this.firstname,
+            lastname:this.lastname,
+            consent:this.consent,
+          }
+          this.storeToDatabase(surveyData);
+        }
+        if(this.location == "Overseas" && this.overseasPurpose == "Study"){
+          surveyData={
+            level:this.level,
+            year:this.year,
+            completed:this.completed,
+            dropoutReason:this.dropoutReason,
+            highestEducationLevel:this.highestEducationLevel,
+            gender:this.gender,
+            location:this.location,
+            employmentStatus:"Foreign Study",
             email:this.email,
             firstname:this.firstname,
             lastname:this.lastname,
@@ -256,5 +334,4 @@ export class SurveyService {
           this.storeToDatabase(surveyData);
         }
     }
-    
 }

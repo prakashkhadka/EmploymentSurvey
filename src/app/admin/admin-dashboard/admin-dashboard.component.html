@@ -214,6 +214,88 @@
 				
 			</div>
 		</div>
+
+		<hr>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<h4 class="text-success text-center mb-3">Business Investment</h4>
+				
+				<ngx-charts-pie-chart
+				  [view]="view"
+			      [scheme]="colorScheme"
+			      [results]="businessInvestment"
+			      [explodeSlices]="explodeSlices"
+			      [labels]="showLabels"
+			      [doughnut]="doughnut"
+			      [maxLabelLength]=40
+			      [legendTitle]="legendTitleBusinessInvestment"
+				  [legend]="showLegend"
+			      *ngIf="pieChart"
+			      class="d-flex justify-content-center"
+			      >
+			    </ngx-charts-pie-chart>
+
+			    <ngx-charts-bar-vertical
+				  [view]="view"
+				  [scheme]="colorScheme"
+				  [results]="businessInvestment"
+				  [gradient]="gradient"
+				  [xAxis]="showXAxis"
+				  [yAxis]="showYAxis"
+				  [legendTitle]="legendTitleBusinessInvestment"
+				  [legend]="showLegend"
+				  [showXAxisLabel]="showXAxisLabel"
+				  [showYAxisLabel]="showYAxisLabel"
+				  [xAxisLabel]="xAxisLabelBusinessInvestment"
+				  [yAxisLabel]="yAxisLabelBusinessInvestment"
+				  class="d-flex justify-content-center"
+				  *ngIf="barChart"
+				  >
+				</ngx-charts-bar-vertical>
+				
+			</div>
+		</div>
+
+		<hr>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<h4 class="text-success text-center mb-3">Job Income</h4>
+				
+				<ngx-charts-pie-chart
+				  [view]="view"
+			      [scheme]="colorScheme"
+			      [results]="jobIncome"
+			      [explodeSlices]="explodeSlices"
+			      [labels]="showLabels"
+			      [doughnut]="doughnut"
+			      [maxLabelLength]=40
+			      [legendTitle]="legendTitleJobIncome"
+				  [legend]="showLegend"
+			      *ngIf="pieChart"
+			      class="d-flex justify-content-center"
+			      >
+			    </ngx-charts-pie-chart>
+
+			    <ngx-charts-bar-vertical
+				  [view]="view"
+				  [scheme]="colorScheme"
+				  [results]="jobIncome"
+				  [gradient]="gradient"
+				  [xAxis]="showXAxis"
+				  [yAxis]="showYAxis"
+				  [legendTitle]="legendTitleJobIncome"
+				  [legend]="showLegend"
+				  [showXAxisLabel]="showXAxisLabel"
+				  [showYAxisLabel]="showYAxisLabel"
+				  [xAxisLabel]="xAxisLabelJobIncome"
+				  [yAxisLabel]="yAxisLabelJobIncome"
+				  class="d-flex justify-content-center"
+				  *ngIf="barChart"
+				  >
+				</ngx-charts-bar-vertical>
+				
+			</div>
+		</div>
 		
 		
 	</div>

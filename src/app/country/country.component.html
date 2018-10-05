@@ -20,6 +20,9 @@
 					    <div class="form-group col-xs-12 col-sm-12">
 					      	<label for="country">Country</label>
 					      	<input 
+					      		auto-complete
+					      		[source]="countries"
+					      		[min-chars]="2"
 					      		type="text" 
 						      	class="form-control" 
 						      	id="country" 

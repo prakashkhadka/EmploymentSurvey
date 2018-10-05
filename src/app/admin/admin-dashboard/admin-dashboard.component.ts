@@ -8,6 +8,8 @@ import { RespondantLocationService } from './adminSharedService/respondant-locat
 import { DropoutReasonService } from './adminSharedService/dropout-reason.service';
 import { EmploymentSituationService } from './adminSharedService/employment-situation.service';
 import { HighestEducationLevelService } from './adminSharedService/highest-education-level.service';
+import { BusinessInvestmentService } from './adminSharedService/business-investment.service';
+import { JobIncomeService } from './adminSharedService/job-income.service';
 
 
 @Component({
@@ -22,13 +24,17 @@ export class AdminDashboardComponent implements OnInit {
   	public respondantLocationService:RespondantLocationService,
   	public dropoutReasonService:DropoutReasonService,
   	public employmentSituationService:EmploymentSituationService,
-  	public highestEducationLevelService:HighestEducationLevelService
+  	public highestEducationLevelService:HighestEducationLevelService,
+  	public businessInvestmentService:BusinessInvestmentService,
+  	public jobIncomeService:JobIncomeService
   	) { }
 
   	dropoutData;
   	respondantLocation;
   	jobSituation;
   	highestEducationLevel;
+  	businessInvestment;
+  	jobIncome
 
   	pieChart:boolean = false;
   	barChart:boolean = false;
@@ -67,18 +73,24 @@ export class AdminDashboardComponent implements OnInit {
 	  legendTitleLocation= "Country of residence";
 	  legendTitleDropout="Dropout reasons"
 	  legentTitleHeducation ="Highest Education Level"
+	  legentTitleBusinessInvestment ="Business Investment"
+	  legentTitleJobIncome ="JobIncome"
 
 	  showXAxisLabel = true;
 	  xAxisLabelEmployment = 'Employment Status';
 	  xAxisLabelLocation = 'Country';
 	  xAxisLabelDropout = 'Dropout reason';
 	  xAxisLabelHeducation = 'Highest Education Level'
+	  xAxisLabelBusinessInvestment = 'Business Investment'
+	  xAxisLabelJobIncome = 'Job Income'
 
 	  showYAxisLabel = true;
 	  yAxisLabelEmployment = 'No of Ex-students';
 	  yAxisLabelLocation = 'No of Ex-students';
 	  yAxisLabelDropout = 'No of Ex-students';
 	  yAxisLabelHeducation = "No. of Ex-students"
+	  yAxisLabelBusinessInvestment = "No. of Ex-students"
+	  yAxisLabelJobIncome = "No. of Ex-students"
 
 	  colorSchemeForBarChart = {
 	    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
@@ -110,5 +122,17 @@ export class AdminDashboardComponent implements OnInit {
 	  		this.highestEducationLevel = data;
 	  	}
   	);
+
+  	this.businessInvestmentService.businessInvestment.subscribe(
+  		(data)=>{
+  			this.businessInvestment = data;
+  		}
+	)
+
+	this.jobIncomeService.jobIncome.subscribe(
+  		(data)=>{
+  			this.jobIncome = data;
+  		}
+	)
   }
 }
