@@ -6994,4 +6994,10 @@ footer {
   background-color: #FBF7FD;
 }
 
+.ngx-charts {
+  margin-left: auto;
+  margin-right: auto;
+  float: none !important;
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -16,10 +16,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 
-import { SurveyMainDataService } from '../admin/admin-dashboard/survey-main-data.service';
-import { DropoutReasonService } from '../admin/admin-dashboard/dropout-reason.service';
-import { RespondantLocationService } from '../admin/admin-dashboard/respondant-location.service';
-
+import { SurveyMainDataService } from '../admin/admin-dashboard/adminSharedService/survey-main-data.service';
+import { DropoutReasonService } from '../admin/admin-dashboard/adminSharedService/dropout-reason.service';
+import { RespondantLocationService } from '../admin/admin-dashboard/adminSharedService/respondant-location.service';
+import { HighestEducationLevelService } from '../admin/admin-dashboard/adminSharedService/highest-education-level.service';
 
 
 
@@ -41,7 +41,8 @@ import { RespondantLocationService } from '../admin/admin-dashboard/respondant-l
   	AuthGuardService,
     SurveyMainDataService,
     DropoutReasonService,
-    RespondantLocationService
+    RespondantLocationService,
+    HighestEducationLevelService
   ]
 })
 export class AdminModule { }

@@ -3,11 +3,11 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 //import firestore from 'firebase/firestore';
 import { Subject } from 'Rxjs';
 
-import { SurveyMainDataService } from './survey-main-data.service';
-import { RespondantLocationService } from './respondant-location.service';
-import { DropoutReasonService } from './dropout-reason.service';
-import { EmploymentSituationService } from './employment-situation.service';
-
+import { SurveyMainDataService } from './adminSharedService/survey-main-data.service';
+import { RespondantLocationService } from './adminSharedService/respondant-location.service';
+import { DropoutReasonService } from './adminSharedService/dropout-reason.service';
+import { EmploymentSituationService } from './adminSharedService/employment-situation.service';
+import { HighestEducationLevelService } from './adminSharedService/highest-education-level.service';
 
 
 @Component({
@@ -21,8 +21,14 @@ export class AdminDashboardComponent implements OnInit {
   	public surveyMainDataService:SurveyMainDataService,
   	public respondantLocationService:RespondantLocationService,
   	public dropoutReasonService:DropoutReasonService,
-  	public employmentSituationService:EmploymentSituationService
+  	public employmentSituationService:EmploymentSituationService,
+  	public highestEducationLevelService:HighestEducationLevelService
   	) { }
+
+  	dropoutData;
+  	respondantLocation;
+  	jobSituation;
+  	highestEducationLevel;
 
   	pieChart:boolean = false;
   	barChart:boolean = false;
@@ -37,7 +43,8 @@ export class AdminDashboardComponent implements OnInit {
   	}
 
 	  //Pie Chart
-	  view: any[] = [800, 400];
+	  //view: any[] = [800, 400];
+	  view:any[] = [800, 500];
 	  showLegend = true;
 	  colorScheme = {
 	    domain: ['red', 'green', 'blue', 'orange', 'purple', 'black', 'brown', 'gold']
@@ -46,11 +53,8 @@ export class AdminDashboardComponent implements OnInit {
 	  explodeSlices = false;
 	  doughnut = false;
 	  animation = true;
-	  lTitle= "Reason of not completing course";
 
-	  dropoutData;
-	  respondantLocation;
-	  jobSituation;
+	  
 
 	  // Vertical Bar Chart
 	  //view: any[] = [700, 400];
@@ -59,12 +63,22 @@ export class AdminDashboardComponent implements OnInit {
 	  showXAxis = true;
 	  showYAxis = true;
 	  gradient = false;
-	  legendTitle= "Emp.Status";
-	  //showLegend = true;
+	  legendTitleEmployment= "Emp.Status";
+	  legendTitleLocation= "Country of residence";
+	  legendTitleDropout="Dropout reasons"
+	  legentTitleHeducation ="Highest Education Level"
+
 	  showXAxisLabel = true;
-	  xAxisLabel = 'Employment Status';
+	  xAxisLabelEmployment = 'Employment Status';
+	  xAxisLabelLocation = 'Country';
+	  xAxisLabelDropout = 'Dropout reason';
+	  xAxisLabelHeducation = 'Highest Education Level'
+
 	  showYAxisLabel = true;
-	  yAxisLabel = 'No of Ex-students';
+	  yAxisLabelEmployment = 'No of Ex-students';
+	  yAxisLabelLocation = 'No of Ex-students';
+	  yAxisLabelDropout = 'No of Ex-students';
+	  yAxisLabelHeducation = "No. of Ex-students"
 
 	  colorSchemeForBarChart = {
 	    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
@@ -88,6 +102,12 @@ export class AdminDashboardComponent implements OnInit {
   	this.employmentSituationService.employmentSituation.subscribe(
 	  	(data)=>{
 	  		this.jobSituation = data;
+	  	}
+  	);
+
+  	this.highestEducationLevelService.educationHighestLevel.subscribe(
+	  	(data)=>{
+	  		this.highestEducationLevel = data;
 	  	}
   	);
   }
