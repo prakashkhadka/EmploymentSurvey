@@ -13,6 +13,7 @@ export class AllRespondantComponent implements OnInit {
 
   surveyIds:any[]=[];
   userInfo;
+  indexNo;
 
   ngOnInit() {
   	firebase.firestore().collection('survey').get().then(
@@ -27,7 +28,8 @@ export class AllRespondantComponent implements OnInit {
 	)
   }
 
-  getUserInfo(id){
+  getUserInfo(id,i){
+  	this.indexNo = i;
   	//console.log("User id is : " + id);
   	firebase.firestore().collection('survey').doc(id).get().then(
   		(doc)=>{

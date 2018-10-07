@@ -79,8 +79,8 @@ import { UnderDevelopmentComponent } from './under-development/under-development
 
 
 const appRoutes: Routes = [
-  //{path:'', component:CourseComponent},
-  {path:'', loadChildren:'./admin/admin.module#AdminModule'},
+  {path:'', component:CourseComponent},
+  //{path:'', loadChildren:'./admin/admin.module#AdminModule'},
   {path:'admin', pathMatch:'prefix', loadChildren:'./admin/admin.module#AdminModule'},
   
   {path:'privacy-policy', component:PrivacyPolicyComponent},

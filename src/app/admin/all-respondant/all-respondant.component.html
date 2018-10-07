@@ -4,11 +4,11 @@
 	<div class="col-sm-8 text-center text-success"><h4>Ex-Student Informaton</h4></div>
 </div>
 <div class="row">
-	<div class="col-sm-4 userIds border border-success">
+	<div class="col-sm-4 userIds border border-success c-main-bg-color">
 		<table class="table table-striped">
 		    <tbody>
 		      <tr *ngFor="let id of surveyIds; let i=index" class="surveyIndividualId">
-		      	<a (click)="getUserInfo(id)">
+		      	<a (click)="getUserInfo(id,i)">
 		      		<td>{{i+1}}</td>
 		        	<td>{{id}}</td>
 		      	</a>
@@ -18,9 +18,16 @@
 	</div>
 
 	<div class="col-sm-8">
-		<div *ngIf="userInfo" class="ml-2">
+		<div *ngIf="!userInfo" class="ml-2 text-muted">
+			<h6 class="text-center">Please select one in the left to view the details of individual respondant.</h6>
+		</div>
+		<div *ngIf="userInfo" class="ml-2 c-main-bg-color">
 			<table class="table table-bordered">
 			  <tbody>
+			  	<tr>
+			      <td>Index No.</td>
+			      <td>{{indexNo+1}}</td>
+			    </tr>
 			    <tr *ngIf="userInfo.date">
 			      <td>Date</td>
 			      <td>{{userInfo.date | date:'d MMM, y, h:mm:ss a'}}</td>
@@ -322,7 +329,7 @@
 
 			    <tr *ngIf="userInfo.consent">
 			      <td>
-			      	User consent
+			      	Consent given
 			      </td>
 			      <td>
 			      	{{userInfo.consent}}
