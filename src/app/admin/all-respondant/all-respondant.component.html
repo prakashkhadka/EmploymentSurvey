@@ -1,0 +1,336 @@
+
+<div class="row mb-3">
+	<div class="col-sm-4 text-center text-success"><h4>Respondants</h4></div>
+	<div class="col-sm-8 text-center text-success"><h4>Ex-Student Informaton</h4></div>
+</div>
+<div class="row">
+	<div class="col-sm-4 userIds border border-success">
+		<table class="table table-striped">
+		    <tbody>
+		      <tr *ngFor="let id of surveyIds; let i=index" class="surveyIndividualId">
+		      	<a (click)="getUserInfo(id)">
+		      		<td>{{i+1}}</td>
+		        	<td>{{id}}</td>
+		      	</a>
+		      </tr>
+		    </tbody>
+	  	</table>
+	</div>
+
+	<div class="col-sm-8">
+		<div *ngIf="userInfo" class="ml-2">
+			<table class="table table-bordered">
+			  <tbody>
+			    <tr *ngIf="userInfo.date">
+			      <td>Date</td>
+			      <td>{{userInfo.date | date:'d MMM, y, h:mm:ss a'}}</td>
+			    </tr>
+			    <tr *ngIf="userInfo.firstname">
+			      <td>Name</td>
+			      <td>{{userInfo.firstname}} {{userInfo.lastname}}</td>
+			    </tr>
+			    <tr *ngIf="userInfo.email">
+			      <td>Email</td>
+			      <td>{{userInfo.email}}</td>
+			    </tr>
+			    <tr *ngIf="userInfo.gender">
+			      <td>Gender</td>
+			      <td>{{userInfo.gender}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.level">
+			      <td>Course joined</td>
+			      <td>{{userInfo.level}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.year">
+			      <td>Year joined</td>
+			      <td>{{userInfo.year}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.completed">
+			      <td>Course completed</td>
+			      <td>{{userInfo.completed}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.dropoutReason">
+			      <td>Dropout reason</td>
+			      <td>{{userInfo.dropoutReason}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.highestEducationLevel">
+			      <td>Highest education level</td>
+			      <td>{{userInfo.highestEducationLevel}}</td>
+			    </tr>
+				
+				<tr *ngIf="userInfo.employmentStatus">
+			      <td>Employment Status</td>
+			      <td>{{userInfo.employmentStatus}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.country">
+			      <td>Country of residence</td>
+			      <td>{{userInfo.country}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.location">
+			      <td>Now in Nepal or Overaseas</td>
+			      <td>{{userInfo.location}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.businessType">
+			      <td>Business Type</td>
+			      <td>{{userInfo.businessType}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.employeeNumber">
+			      <td>Employee number</td>
+			      <td>{{userInfo.employeeNumber}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.businessInheritance">
+			      <td>How business started</td>
+			      <td>{{userInfo.businessInheritance}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.businessDuration">
+			      <td>Business duration</td>
+			      <td>{{userInfo.businessDuration}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.businessInvestment">
+			      <td>Business investment</td>
+			      <td>{{userInfo.businessInvestment}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.businessNumber">
+			      <td>First business or not</td>
+			      <td>{{userInfo.businessNumber}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.jobLevel">
+			      <td>Job level</td>
+			      <td>{{userInfo.jobLevel}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.jobType">
+			      <td>Job type</td>
+			      <td>{{userInfo.jobType}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.organisationType">
+			      <td>Organisation type</td>
+			      <td>{{userInfo.organisationType}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.jobIncome">
+			      <td>Income from job</td>
+			      <td>{{userInfo.jobIncome}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.jobOtherActivites">
+			      <td>Activities other than job</td>
+			      <td>{{userInfo.jobOtherActivites}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.jobSatisfactionLevel">
+			      <td>
+			      	Job satisfaction level
+		  		  </td>
+			      <td>{{userInfo.jobSatisfactionLevel}}</td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.pastJobChange">
+			      <td>
+			      	Job Changed in last 5 years
+			      </td>
+			      <td>
+			      	{{userInfo.pastJobChange}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.futureJobChange">
+			      <td>
+			      	Want to change job in 2 years
+			      </td>
+			      <td>
+			      	{{userInfo.futureJobChange}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.overseasPurpose">
+			      <td>
+			      	Purpose of living overseas
+			      </td>
+			      <td>
+			      	{{userInfo.overseasPurpose}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.feDuration">
+			      <td>
+			      	Foreign employment duration
+			      </td>
+			      <td>
+			      	{{userInfo.feDuration}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.feIncome">
+			      <td>
+			      	Income from foreign employment
+			      </td>
+			      <td>
+			      	{{userInfo.feIncome}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.feWorkDayNumber">
+			      <td>
+			      	No. of working days in Foreign emp.
+			      </td>
+			      <td>
+			      	{{userInfo.feWorkDayNumber}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.feOvertime">
+			      <td>
+			      	Overtime or not in foreign emp.
+			      </td>
+			      <td>
+			      	{{userInfo.feOvertime}}
+			      </td>
+			    </tr>
+				
+				<tr *ngIf="userInfo.feOvertimeHours">
+			      <td>
+			      	Overtime hours in foreign emp.
+			      </td>
+			      <td>
+			      	{{userInfo.feOvertimeHours}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.feFurtherStay">
+			      <td>
+			      	Further stay in foreign emp.
+			      </td>
+			      <td>
+			      	{{userInfo.feFurtherStay}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.agricultureType">
+			      <td>
+			      	Agriculture type
+			      </td>
+			      <td>
+			      	{{userInfo.agricultureType}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.agricultureIncome">
+			      <td>
+			      	Infome from agriculture
+			      </td>
+			      <td>
+			      	{{userInfo.agricultureIncome}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.afterStudy">
+			      <td>
+			      	Plan after study
+			      </td>
+			      <td>
+			      	{{userInfo.afterStudy}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.dreamJob">
+			      <td>
+			      	Dream job after study
+			      </td>
+			      <td>
+			      	{{userInfo.dreamJob}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.retiredTime">
+			      <td>
+			      	Time since retirement
+			      </td>
+			      <td>
+			      	{{userInfo.retiredTime}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.serviceDuration">
+			      <td>
+			      	Service duration
+			      </td>
+			      <td>
+			      	{{userInfo.serviceDuration}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.pension">
+			      <td>
+			      	Receive pension or not
+			      </td>
+			      <td>
+			      	{{userInfo.pension}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.housewifeWish">
+			      <td>
+			      	Wish to work outside ?
+			      </td>
+			      <td>
+			      	{{userInfo.housewifeWish}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.position">
+			      <td>
+			      	Position while studying
+			      </td>
+			      <td>
+			      	{{userInfo.position}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.contribution">
+			      <td>
+			      	Contribution while studying
+			      </td>
+			      <td>
+			      	{{userInfo.contribution}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.alumni">
+			      <td>
+			      	Want to join alumni
+			      </td>
+			      <td>
+			      	{{userInfo.alumni}}
+			      </td>
+			    </tr>
+
+			    <tr *ngIf="userInfo.consent">
+			      <td>
+			      	User consent
+			      </td>
+			      <td>
+			      	{{userInfo.consent}}
+			      </td>
+			    </tr>
+
+			  </tbody>
+			</table>
+		</div>
+	</div>
+</div>

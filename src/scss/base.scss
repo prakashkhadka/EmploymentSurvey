@@ -8,7 +8,11 @@
 }
 
 body{
-	margin-top: 65px;
+	margin-top: 85px;
+	@include media-breakpoint-up(md) {
+    	margin-bottom:120px;
+	}
+	
 }
 
 .card-columns {
@@ -101,8 +105,18 @@ button[disabled]{
 }
 
 footer{
+	padding-bottom:10px;
 	min-height:100px;
 	background-color:$navBgColor
+}
+
+.footer {
+	@include media-breakpoint-up(md) {
+    	position: fixed;
+  		bottom: 0;
+  		width: 100%;
+	}
+  
 }
 
 .ngx-charts{

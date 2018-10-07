@@ -11,6 +11,9 @@ import 'firebase/firestore';
 export class SurveyService {
 	constructor(private router:Router){}
   
+  position:string;
+  contribution:string;
+  alumni:string;
   firstname:string;
   lastname:string;
   year:number;
@@ -65,6 +68,9 @@ export class SurveyService {
     firebase.firestore().collection('survey').add(data).then(
       ()=>{
         this.router.navigate(['/thank-you']);
+        this.position='';
+        this.contribution='';
+        this.alumni='';
         this.firstname='';
         this.lastname='';
         this.year=null;
@@ -126,12 +132,17 @@ export class SurveyService {
       if(this.feOvertime == 'No'){
         this.feOvertimeHours=null;
       }
+      /*
       if(this.location == "Overseas" && this.overseasPurpose == "Work"){
         this.employmentStatus == "Foreign Employment";
       }
-      
+      */
 
-      if(!this.level || !this.year || !this.completed || !this.highestEducationLevel || !this.gender || !this.location || !this.consent){
+      if(!this.level || !this.year 
+        || !this.completed || !this.highestEducationLevel 
+        || !this.gender || !this.location || !this.consent
+        || !this.position || !this.contribution  || !this.alumni
+        ){
         this.router.navigate(['/']);
       }
 
@@ -156,7 +167,11 @@ export class SurveyService {
           JobOtherActivities:this.jobOtherActivites,
           jobSatisfactionLevel:this.jobSatisfactionLevel,
           pastJobChange:this.pastJobChange,
-          futureJobChange:this.futureJobChange
+          futureJobChange:this.futureJobChange,
+          position:this.position,
+          contribution:this.contribution,
+          alumni:this.alumni,
+          date:Date.now()
         }
         this.storeToDatabase(surveyData);
       }
@@ -179,7 +194,11 @@ export class SurveyService {
             businessInheritance:this.businessInheritance,
             businessDuration:this.businessDuration,
             businessInvestment:this.businessInvestment,
-            businessNumber:this.businessNumber
+            businessNumber:this.businessNumber,
+            position:this.position,
+            contribution:this.contribution,
+            alumni:this.alumni,
+            date:Date.now()
           }
           this.storeToDatabase(surveyData);
         }
@@ -202,7 +221,11 @@ export class SurveyService {
             foreignEmploymentIncome:this.feIncome,
             foreignEmploymentWorkdaysNumber:this.feWorkDayNumber,
             foreignEmploymentOvertime:this.feOvertime,
-            foreignEmploymentFurtherStay:this.feFurtherStay
+            foreignEmploymentFurtherStay:this.feFurtherStay,
+            position:this.position,
+            contribution:this.contribution,
+            alumni:this.alumni,
+            date:Date.now()
           }
           this.storeToDatabase(surveyData);
         }
@@ -221,7 +244,11 @@ export class SurveyService {
             lastname:this.lastname,
             consent:this.consent,
             afterStudy:this.afterStudy,
-            dreamJob:this.dreamJob
+            dreamJob:this.dreamJob,
+            position:this.position,
+            contribution:this.contribution,
+            alumni:this.alumni,
+            date:Date.now()
           }
           this.storeToDatabase(surveyData);
         }
@@ -239,7 +266,11 @@ export class SurveyService {
             firstname:this.firstname,
             lastname:this.lastname,
             consent:this.consent,
-            houseWifeJobWish:this.housewifeWish
+            houseWifeJobWish:this.housewifeWish,
+            position:this.position,
+            contribution:this.contribution,
+            alumni:this.alumni,
+            date:Date.now()
           }
           this.storeToDatabase(surveyData);
         }
@@ -258,7 +289,11 @@ export class SurveyService {
             lastname:this.lastname,
             consent:this.consent,
             agricultureType:this.agricultureType,
-            agricultureIncome:this.agricultureIncome
+            agricultureIncome:this.agricultureIncome,
+            position:this.position,
+            contribution:this.contribution,
+            alumni:this.alumni,
+            date:Date.now()
           }
           this.storeToDatabase(surveyData);
         }
@@ -279,6 +314,10 @@ export class SurveyService {
             retirementTime:this.retiredTime,
             servieDuration:this.serviceDuration,
             pension:this.pension,
+            position:this.position,
+            contribution:this.contribution,
+            alumni:this.alumni,
+            date:Date.now()
           }
           this.storeToDatabase(surveyData);
         }
@@ -295,7 +334,11 @@ export class SurveyService {
             email:this.email,
             firstname:this.firstname,
             lastname:this.lastname,
-            consent:this.consent
+            consent:this.consent,
+            position:this.position,
+            contribution:this.contribution,
+            alumni:this.alumni,
+            date:Date.now()
           }
           this.storeToDatabase(surveyData);
         }
@@ -313,6 +356,10 @@ export class SurveyService {
             firstname:this.firstname,
             lastname:this.lastname,
             consent:this.consent,
+            position:this.position,
+            contribution:this.contribution,
+            alumni:this.alumni,
+            date:Date.now()
           }
           this.storeToDatabase(surveyData);
         }
@@ -330,6 +377,37 @@ export class SurveyService {
             firstname:this.firstname,
             lastname:this.lastname,
             consent:this.consent,
+            position:this.position,
+            contribution:this.contribution,
+            alumni:this.alumni,
+            date:Date.now()
+          }
+          this.storeToDatabase(surveyData);
+        }
+        else if(this.location == "Overseas" && this.overseasPurpose == "Work"){
+          surveyData = {
+            level:this.level,
+            year:this.year,
+            completed:this.completed,
+            dropoutReason:this.dropoutReason,
+            highestEducationLevel:this.highestEducationLevel,
+            gender:this.gender,
+            location:this.location,
+            employmentStatus:"Foreign Employment",
+            email:this.email,
+            firstname:this.firstname,
+            lastname:this.lastname,
+            consent:this.consent,
+            country:this.country,
+            foreignEmploymentDuration:this.feDuration,
+            foreignEmploymentIncome:this.feIncome,
+            foreignEmploymentWorkdaysNumber:this.feWorkDayNumber,
+            foreignEmploymentOvertime:this.feOvertime,
+            foreignEmploymentFurtherStay:this.feFurtherStay,
+            position:this.position,
+            contribution:this.contribution,
+            alumni:this.alumni,
+            date:Date.now()
           }
           this.storeToDatabase(surveyData);
         }

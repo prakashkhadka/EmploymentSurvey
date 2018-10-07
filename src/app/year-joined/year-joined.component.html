@@ -15,7 +15,7 @@
             <p class="mb-1">Please fill up following</p>
             </div>
 			<div class="row small justify-content-center text-danger" *ngIf="invalidDate">	
-				<p>Please choose between 2046 to 2075</p>
+				<p>Please choose between 2047 to 2075</p>
 			</div>
 			<form #f="ngForm">
 				<div>
@@ -31,7 +31,7 @@
 					      	#year="ngModel"
 					      	required
 					      	pattern="(^[2][0][4-7][0-9]$)"		
-				      		[ngClass]="{ 'is-invalid': year.value > 2075 || year.value < 2045 && year.touched, 'is-valid': year.valid && year.touched }" 
+				      		[ngClass]="{ 'is-invalid': year.value > 2075 || year.value < 2046 && year.touched, 'is-valid': year.valid && year.touched }" 
 				      		>
 				      		<div *ngIf="year.invalid && year.touched" class="invalid-feedback">
 			                    <div *ngIf="year.errors.required">Please enter year of competion</div>

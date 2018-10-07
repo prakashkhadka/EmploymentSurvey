@@ -1,0 +1,169 @@
+<section>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-8 col-xs-12">
+        <h6 class="text-success text-center">Employment Survey</h6>
+        <hr>
+        <div class="card c-main-bg-color border-info">
+          <div class="card-body pt-1 text-success">
+            <p class="lead text-info text-center mb-1">Were you engaged in any position below ?</p>
+            <p class="text-info text-center small mb-1">( अध्ययनरत रहदा कुनै पदमा हुनुहुन्थियो ? )</p>
+            <div class="row justify-content-center" *ngIf="isInvalid && f.invalid">  
+                  <p [ngClass]="{'text-danger small border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
+            </div>
+            <div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">
+            <p class="mb-1">Please select one</p>
+            </div>
+            <form #f="ngForm">
+                  <div class="row mt-1">
+                        <div class="col-xs-12 custom-control custom-radio">
+                              <input 
+                                    id="group-1" 
+                                    type="radio" 
+                                    class="custom-control-input" 
+                                    value="FSU President" 
+                                    name="position" 
+                                    [(ngModel)]="surveyService.position"
+                                    #position="ngModel"
+                                    required 
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="group-1">FSU President <span class="text-info small">(स्ववियु सभापति)</span></label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+                              <input 
+                                    id="group-2" 
+                                    type="radio" 
+                                    class="btn btn-outline-primary custom-control-input" 
+                                    value="FSU V-President" 
+                                    name="position" 
+                                    [(ngModel)]="surveyService.position"
+                                    #position="ngModel"
+                                    required
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="group-2">FSU V-President <span class="text-info small">(स्ववियु उपसभापति)</span></label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+                              <input 
+                                    id="group-3" 
+                                    type="radio" 
+                                    class="btn btn-outline-primary custom-control-input" 
+                                    value="FSU Treasurer" 
+                                    name="position" 
+                                    [(ngModel)]="surveyService.position"
+                                    #position="ngModel"
+                                    required
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="group-3">FSU Treasurer <span class="text-info small">(स्ववियु कोषाध्यक्ष्य)</span></label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+                              <input 
+                                    id="group-4" 
+                                    type="radio" 
+                                    class="btn btn-outline-primary custom-control-input" 
+                                    value="FSU Secratary" 
+                                    name="position" 
+                                    [(ngModel)]="surveyService.position"
+                                    #position="ngModel"
+                                    required
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="group-4">FSU Secratary <span class="text-info small">(स्ववियु सचिब)</span></label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+                              <input 
+                                    id="group-5" 
+                                    type="radio" 
+                                    class="btn btn-outline-primary custom-control-input" 
+                                    value="FSU V-Secratary" 
+                                    name="position" 
+                                    [(ngModel)]="surveyService.position"
+                                    #position="ngModel"
+                                    required
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="group-5">FSU V-Secratary <span class="text-info small">(स्ववियु सहसचिब)</span></label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+                              <input 
+                                    id="group-6" 
+                                    type="radio" 
+                                    class="btn btn-outline-primary custom-control-input" 
+                                    value="FSU Member" 
+                                    name="position" 
+                                    [(ngModel)]="surveyService.position"
+                                    #position="ngModel"
+                                    required
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="group-6">FSU Member <span class="text-info small">(स्ववियु सदस्य)</span></label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+                              <input 
+                                    id="group-7" 
+                                    type="radio" 
+                                    class="btn btn-outline-primary custom-control-input" 
+                                    value="Student Union Member" 
+                                    name="position" 
+                                    [(ngModel)]="surveyService.position"
+                                    #position="ngModel"
+                                    required
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="group-7">Other Student Union Member <span class="text-info small">(अन्य विद्यार्थी संगठनको सदस्य)</span></label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+                              <input 
+                                    id="group-8" 
+                                    type="radio" 
+                                    class="btn btn-outline-primary custom-control-input" 
+                                    value="Quality Circle Member" 
+                                    name="position" 
+                                    [(ngModel)]="surveyService.position"
+                                    #position="ngModel"
+                                    required
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="group-8">Quality Circle Member</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+                              <input 
+                                    id="group-9" 
+                                    type="radio" 
+                                    class="btn btn-outline-primary custom-control-input" 
+                                    value="Other" 
+                                    name="position" 
+                                    [(ngModel)]="surveyService.position"
+                                    #position="ngModel"
+                                    required
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="group-9">Other <span class="text-info small">(अन्य)</span></label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+                              <input 
+                                    id="group-10" 
+                                    type="radio" 
+                                    class="btn btn-outline-primary custom-control-input" 
+                                    value="None" 
+                                    name="position" 
+                                    [(ngModel)]="surveyService.position"
+                                    #position="ngModel"
+                                    required
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="group-10">None of above <span class="text-info small">(कुनैमा पनि थिएन)</span></label>
+                        </div>
+                  </div>
+                  
+                  <hr>
+
+                  	<div class="row text-center">
+						<div class="col xs-6">
+							<button class="btn btn-outline-success" (click)="goBack()">Back</button>
+						</div>
+						<div class="col xs-6">
+							<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
+						</div>
+					</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-
+import { AlumniComponent } from './alumni/alumni.component';
+import { ContributionComponent } from './contribution/contribution.component';
+import { PositionComponent } from './position/position.component';
 import { NameComponent } from './name/name.component';
 import { YearJoinedComponent } from './year-joined/year-joined.component';
 import { CourseComponent } from './course/course.component';
@@ -77,8 +79,8 @@ import { UnderDevelopmentComponent } from './under-development/under-development
 
 
 const appRoutes: Routes = [
-  {path:'', component:CourseComponent},
-  //{path:'', loadChildren:'./admin/admin.module#AdminModule'},
+  //{path:'', component:CourseComponent},
+  {path:'', loadChildren:'./admin/admin.module#AdminModule'},
   {path:'admin', pathMatch:'prefix', loadChildren:'./admin/admin.module#AdminModule'},
   
   {path:'privacy-policy', component:PrivacyPolicyComponent},
@@ -98,6 +100,9 @@ const appRoutes: Routes = [
   {path:'country', component:CountryComponent},
   {path:'overseas-purpose', component:OverseasPurposeComponent},
   {path:'employment-status', component:EmployementStatusComponent},
+  {path:'position', component:PositionComponent},
+  {path:'contribution', component:ContributionComponent},
+  {path:'alumni', component:AlumniComponent},
   {path:'name', component:NameComponent},
   {path:'job', component:JobEntryComponent, children:[
   	{path:'', component:JobTypeComponent},

@@ -23,10 +23,10 @@ export class OverseasPurposeComponent implements OnInit {
 	  		this.router.navigate(['/foreign-employment']);
 	  	}
 	  	else if(this.surveyService.overseasPurpose == 'Study'){
-	  		this.router.navigate(['/name']);
+	  		this.router.navigate(['/position']);
 	  	}
 	  	else if(this.surveyService.overseasPurpose == 'NRN'){
-	  		this.router.navigate(['/name']);
+	  		this.router.navigate(['/position']);
 	  	}
 	  	else{
 	  		this.isInvalid = true;

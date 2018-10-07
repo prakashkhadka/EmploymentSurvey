@@ -22,6 +22,7 @@ import { RespondantLocationService } from '../admin/admin-dashboard/adminSharedS
 import { HighestEducationLevelService } from '../admin/admin-dashboard/adminSharedService/highest-education-level.service';
 import { BusinessInvestmentService } from '../admin/admin-dashboard/adminSharedService/business-investment.service';
 import { JobIncomeService } from '../admin/admin-dashboard/adminSharedService/job-income.service';
+import { AllRespondantComponent } from './all-respondant/all-respondant.component';
 
 
 
@@ -36,7 +37,8 @@ import { JobIncomeService } from '../admin/admin-dashboard/adminSharedService/jo
   	LoginComponent,
   	AdminEntryComponent,
   	MessageComponent,
-  	AdminDashboardComponent
+  	AdminDashboardComponent,
+  	AllRespondantComponent
   ],
   providers: [
   	AuthService,

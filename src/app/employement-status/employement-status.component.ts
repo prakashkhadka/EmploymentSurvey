@@ -44,7 +44,7 @@ export class EmployementStatusComponent implements OnInit {
   		this.router.navigate(['/retired']);
   	}
     else if(this.surveyService.employmentStatus == 'Unemployed'){
-      this.router.navigate(['/name']);
+      this.router.navigate(['/position']);
     }
   	else{
   		this.isInvalid = true;

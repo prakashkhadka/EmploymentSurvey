@@ -19,7 +19,7 @@ export class AgricultureIncomeComponent implements OnInit {
   isInvalid:boolean = false;
   onSubmit(){
   	if(this.surveyService.agricultureIncome){
-  		this.router.navigate(['/name']);
+  		this.router.navigate(['/position']);
   	}
   	else{
   		this.isInvalid = true;

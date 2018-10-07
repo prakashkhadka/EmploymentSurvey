@@ -64,6 +64,18 @@
                                     >
                               <label class="custom-control-label pl-2 ml-3" for="bbs">Doctorate</label>
                         </div>
+                        <div class="col-xs-12 col-sm-12 custom-control custom-radio mt-2">
+                              <input 
+                                    id="other" 
+                                    type="radio" 
+                                    class="btn btn-outline-primary custom-control-input" 
+                                    value="Other" 
+                                    name="level" 
+                                    [(ngModel)]="surveyService.highestEducationLevel"
+                                    required
+                                    >
+                              <label class="custom-control-label pl-2 ml-3" for="other">Other</label>
+                        </div>
                         
                   </div>
 

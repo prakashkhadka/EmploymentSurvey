@@ -20,7 +20,7 @@ export class BusinessNumberComponent implements OnInit {
   isInvalid:boolean = false;
   onSubmit(){
   	if(this.surveyService.businessNumber){
-  		this.router.navigate(['/name']);
+  		this.router.navigate(['/position']);
   	}
   	else{
   		this.isInvalid = true;

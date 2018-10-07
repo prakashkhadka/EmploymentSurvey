@@ -20,7 +20,7 @@ export class DreamJobComponent implements OnInit {
   onSubmit(){
   	if(this.surveyService.dreamJob){
   		if(this.surveyService.dreamJob.length > 1 && this.surveyService.dreamJob.length < 29){
-  			this.router.navigate(['/name']);
+  			this.router.navigate(['/position']);
   		}
   		else{
   			this.isInvalid = true;

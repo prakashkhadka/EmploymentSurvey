@@ -49,7 +49,6 @@ export class AdminDashboardComponent implements OnInit {
   	}
 
 	  //Pie Chart
-	  //view: any[] = [800, 400];
 	  view:any[] = [800, 500];
 	  showLegend = true;
 	  colorScheme = {
@@ -60,10 +59,7 @@ export class AdminDashboardComponent implements OnInit {
 	  doughnut = false;
 	  animation = true;
 
-	  
-
 	  // Vertical Bar Chart
-	  //view: any[] = [700, 400];
 
 	  // options
 	  showXAxis = true;

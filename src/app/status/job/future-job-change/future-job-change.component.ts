@@ -19,7 +19,7 @@ export class FutureJobChangeComponent implements OnInit {
   isInvalid:boolean = false;
   onSubmit(){
   	if(this.surveyService.futureJobChange){
-  		this.router.navigate(['/name']);
+  		this.router.navigate(['/position']);
   	}
   	else{
   		this.isInvalid = true;

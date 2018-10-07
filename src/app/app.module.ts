@@ -76,6 +76,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
  import { NguiAutoCompleteModule } from '@ngui/auto-complete';
+import { PositionComponent } from './position/position.component';
+import { ContributionComponent } from './contribution/contribution.component';
+import { AlumniComponent } from './alumni/alumni.component';
 
 
 
@@ -139,6 +142,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContactUsComponent,
     PurposeComponent,
     AboutUsComponent,
+    PositionComponent,
+    ContributionComponent,
+    AlumniComponent,
   ],
   imports: [
     BrowserModule,

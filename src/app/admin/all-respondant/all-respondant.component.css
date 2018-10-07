@@ -1,0 +1,7 @@
+.userIds{
+	height:500px;
+	overflow-y: scroll;
+}
+.surveyIndividualId:hover{
+	cursor: pointer;
+}

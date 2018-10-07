@@ -1,0 +1,68 @@
+<section>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-8 col-xs-12">
+        <h6 class="text-success text-center">Employment Survey</h6>
+        <hr>
+        <div class="card c-main-bg-color border-info">
+          <div class="card-body pt-1 text-success">
+				<p class="lead text-info text-center mb-1">Are you interested to join alumni association ?</p>
+				<p class="text-info text-center small mb-1">( के तपाइँ यस क्याम्पसको पूर्ब विद्यार्थीहरुको समूह/संगठनमा संलग्न हुन चाहनुहुन्छ ? )</p>
+				<div class="row justify-content-center" *ngIf="isInvalid && f.invalid">  
+				      <p [ngClass]="{'text-danger small border border-danger rounded p-2 guide blink': isInvalid}">Please select one <span *ngIf="isInvalid">to proceed</span></p>
+				</div>
+				<div class="row text-muted small justify-content-center" *ngIf="!isInvalid || f.valid">
+				      <p class="mb-1">Please select one</p>
+				</div>
+				<form #f="ngForm">
+					<div class="row mt-4 text-center">
+						<div class="col custom-control custom-radio">
+				      		<input 
+				      			id="group-1" 
+				      			type="radio" 
+				      			class="custom-control-input" 
+				      			value='Yes' 
+				      			name="alumni" 
+				      			[(ngModel)]="surveyService.alumni"
+				      			required 
+					      		>
+				      		<label class="custom-control-label pl-2" for="group-1">Yes</label>
+				      	</div>
+				      	<div class="col custom-control custom-radio mt-2">
+				      		<input 
+				      			id="group-2" 
+				      			type="radio" 
+				      			class="btn btn-outline-primary custom-control-input"  
+				      			name="alumni"
+				      			value="No"
+				      			[(ngModel)]="surveyService.alumni"
+					      		>
+				      		<label class="custom-control-label pl-2" for="group-2">No</label>
+				      	</div>
+				 	</div>
+					<hr>
+				 	<div class="text-center">
+						<p class="text-info">If you are interested to join, please provide your name and email in next sections.</p>
+						<p class="text-info small">यदि तपाइँ यस क्याम्पसको पूर्ब विद्यार्थीहरुको समूह/संगठनमा संलग्न हुन चाहनुहुन्छ भने अर्को सेक्सनमा आफ्नो नाम र इमेल ठेगाना प्रदान गर्नुहोला ।</p>
+					</div>
+
+					<hr>
+
+					<div class="row text-center">
+						<div class="col xs-6">
+							<button class="btn btn-outline-success" (click)="goBack()">Back</button>
+						</div>
+						<div class="col xs-6">
+							<button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Next</button>
+							
+						</div>
+					</div>
+			</form>
+			</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+					
